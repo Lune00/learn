@@ -52,5 +52,16 @@ int main(){
   if(found.first) cout << "Found ! " << endl ;
   else cout << "Not found ! "<< endl ;
 
+
+
+  int n = 0 ;
+  for(int i= 0 ; i != 3 ; i++) {
+    for(int j = i ; j != 3 ; j++ ) {
+      cout << i <<" "<< j << endl ;
+      n++;
+    }
+  }
+  cout << n << endl ;
+
   return 0 ;
 }
