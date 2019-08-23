@@ -3,84 +3,75 @@
 #include<vector>
 #include<map>
 
-//Prototypage de la librairie geneticsLib pour les interfaces
-
 using namespace std;
 
-//Attribute minimal
+//Attribute est la feature implémentée
 struct Attribute{
+
   std::string name_ ;
-  int value_ ;
+  //Valeur double et pour discret cast to int??
+  double value_ ;
+  //pointeur vers la feature par laquelle il est créee, utile ?
   Attribute(std::string name, int value) {
     name_ = name ;
     value_ = value;
   }
 };
 
-
-//heritera de genetics. 
-
-struct Oiseau {
-
-  //Obligatoire: sert de clef pour stocker les Attribute
-  enum class Attributes{wingSize = 0 , plumageColor = 1 } ;
-  //Personalisation du retour de la valeur d'un trait discret
-  enum class plumageColor{ blue = 0 , black = 1 } ;
-
-  //Stocke tous les attributs que l'on desire ajouter (existe deja dans class genetics)
-  std::map<Attributes,Attribute> myMap;
-
-  //D'abord on ajoute les attributs a partir de la base de features abstraites:
-  //label(abstract name), name (vrai nom de la feature), Attributes donne un tag a la feature pour la retrouver( sert de clef pour la stocker dans la map). Cette fonction appelera insert. Et creera le materiel genetique necessaire.
-  void addAttribute(std::string label, std::string name, Attributes attribute); 
-
-  //On peut ensuite associer la valeur de retour d'un attribut a un enum pour. Une feature qui renvoie 0, 1 ou 2 renverra enum::bleu, enum::noir etc...
-  void associateReturnValueToEnum();
-
-  Oiseau(){
-    addAttribute("color","plumageColor",Attributes::plumageColor) ;
-    associateReturnValueToEnum();
-    cout << "L'oiseau a " << myMap.size() << " attributs. " << endl ;
-  }
-
+//Gere tout le materiel genetique
+class Genome{
+  public:
+  double getAttributeValue(int index);
+  void addAttribute(std::string name,int value,int index);
+  private:
+  std::map<int,Attribute> attributes_ ;
 };
 
+void Genome::addAttribute(std::string name, int value, int index) {
+  attributes_.insert( std::pair<int,Attribute>( index, Attribute("size",3) ) );
+}
+double Genome::getAttributeValue(int index){
+  std::map<int,Attribute>::iterator it = attributes_.find(index) ;
+  if(it!=attributes_.end())
+    return it->second.value_ ;
+  else return 0. ;
+}
 
-void Oiseau::addAttribute(std::string label, std::string name, Attributes attribute) {
-  myMap.insert(std::pair<Attributes,Attribute>(attribute,Attribute(name, 0)) );
+class Oiseau : public Genome{
+  public:
+    //On declare les tags des attributs ainsi que des tags pour le retour des attributs discrets
+    enum AttributPhysique{ tailleCorps = 0 , tailleAiles = 1 } ;
+    enum TailleAiles{ grande = 0 , petite = 1 };
+    Oiseau();
+    TailleAiles getWingsSize();
+  private:
+    //Variable qui stocke le resultat de l'expression des genes d'un attribut discret
+    AttributPhysique eAttributPhysique_ ;
+};
+
+Oiseau::Oiseau() {
+  addAttribute("tailleAiles", 1 , static_cast<int>(AttributPhysique::tailleAiles) ) ;
+}
+
+Oiseau::TailleAiles Oiseau::getWingsSize(){
+return TailleAiles(getAttributeValue( AttributPhysique::tailleAiles ) ) ;
 }
 
 
-void Oiseau::associateReturnValueToEnum() {
-  //On parcourt le map d'Attribut
-  //On doit écrire pour chaque Attribute (wingSize, plumageColor etc...) si on veut une valeur interpretee
-  //La feature doit changer sa fonction return value. Pas encore sur de cette partie.
-  //A mediter!!!!
-
-  cout << myMap.find(Attributes::plumageColor)->second.name_ << endl ;
+//C++11 : auto ne peut pas inferer le type de retour (C++14 oui)
+auto add(int x, int y) ->decltype(x  + y ) {
+  return x + y ;
 }
 
 int main() {
 
-
-  // Apres ce serait bien de pouvoir définir plusieurs enums pour séparer les features pour mieux sy' retrouver du genre
-  // enum class Attributes_physique{ taille, couleur des yeux... }
-  // enum class Attributes_mental{force_mental, resitance a la folie, ...; }
-  // Pour ça il faudrait remplacer la clef de la map par un struct un peu plus dévelopéé. A reflechir. J'arrive pas a trouver de solution a ce probleme
-  //On pourra ajouter une fonction qui verifie ca. Chaque appel de insert (ou add) incremente un compteur. Si la taille de la map est differente (inferieure) a celle du compteur alors certaines features n'ont pas été ajoutées. Erreur
-
-  //On stocke dans une map les Attributes d'un individu (dans la classe Genetics pour la lib)
-  //std::map<Attributes,Attribute> myMap;
-  ////L'idée est d'ajouter un attribut en lui associant une clef(key) 
-  //myMap.insert(std::pair<Attributes,Attribute>(Attributes::wingSize,Attribute("wingSize", 0)) );
-  //myMap.insert(std::pair<Attributes,Attribute>(Attributes::plumageColor,Attribute("plumageColor", 1)) );
-
-
-  ////On peut recuperer l'attribut par sa key (issu de Enum Attributes)
-  //std::cout << myMap.find(Attributes::wingSize)->second.name_ <<" " << myMap.find(Attributes::wingSize)->second.value_ << '\n';
-  //
-  //
+  //From int to Enum
+  //AttributPhysique attributPhysique = AttributPhysique(1.2);
+  //if(attributPhysique == AttributPhysique::tailleAiles ) cout << "bingo" << endl ;
   Oiseau oiseau ;
+  if( oiseau.getWingsSize() == Oiseau::TailleAiles::petite) cout << "L'oiseau a de petites ailes" << endl ;
 
   return 0 ;
 }
+
+
