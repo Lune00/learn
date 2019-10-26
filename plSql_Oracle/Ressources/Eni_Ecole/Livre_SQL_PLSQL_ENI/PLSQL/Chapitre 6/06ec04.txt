@@ -1,0 +1,29 @@
+SQL> set serveroutput on
+SQL>  execute lireXml('c:\xml','equipe.xml','erreurs.txt');
+Les éléments du documents sont :                                                
+equipe coureur coureur coureur coureur coureur coureur coureur coureur coureur  
+Les attributs des éléments sont:                                                
+equipe:                                                                         
+nom=US Postal pays=USA                                                          
+coureur:                                                                        
+numero=001                                                                      
+coureur:                                                                        
+numero=002                                                                      
+coureur:                                                                        
+numero=003                                                                      
+coureur:                                                                        
+numero=004                                                                      
+coureur:                                                                        
+numero=005                                                                      
+coureur:                                                                        
+numero=006                                                                      
+coureur:                                                                        
+numero=007                                                                      
+coureur:                                                                        
+numero=008                                                                      
+coureur:                                                                        
+numero=009                                                                      
+
+Procédure PL/SQL terminée avec succès.
+
+SQL>

@@ -1,0 +1,1 @@
+alter table exemplaires modify (etat char(2) default 'NE');

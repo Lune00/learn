@@ -1,0 +1,18 @@
+-- FORALL
+--exemple : Je veux supprimer tous les employes d'une liste de departements
+DROP TABLE employe;
+
+--Faire une copie de la table emp
+CREATE TABLE employe AS SELECT * FROM emp;
+
+DECLARE
+    TYPE L_emp IS VARRAY(20) OF NUMBER;
+    depts L_emp := L_emp(10,30,40);
+    BEGIN
+    --Pas de boucle: delete en une seule requete (equivalent a mettre plusieurs where?)
+    FORALL i IN depts.FIRST..depts.LAST
+        DELETE FROM employe WHERE deptno=depts(i);
+END;
+/
+
+SELECT * FROM employe;

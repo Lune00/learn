@@ -1,0 +1,14 @@
+import java.sql.*;
+class Comptes{
+  public static int CompteClients(){
+    int nombre=0;
+    try{
+      #sql{SELECT COUNT(*) INTO :nombre FROM CLIENTS};
+      return nombre;
+    } catch(SQLException e){
+    }finally{
+      return nombre;
+    }
+  }
+
+}

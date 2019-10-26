@@ -1,0 +1,11 @@
+<equipe nom="US Postal" pays="USA">
+  <coureur numero="001">ARMSTRONG</coureur>
+  <coureur numero="002">EKIMOV</coureur>
+  <coureur numero="003">HERAS</coureur>
+  <coureur numero="004">HINCAPIE</coureur>
+  <coureur numero="005">JOACHIM</coureur>
+  <coureur numero="006">LANDIS</coureur>
+  <coureur numero="007">PADRNOS</coureur>
+  <coureur numero="008">PENA</coureur>
+  <coureur numero="009">RUBIERA</coureur>
+</equipe>

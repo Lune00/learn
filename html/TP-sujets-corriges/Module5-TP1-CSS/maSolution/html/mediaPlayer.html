@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos</title>
+</head>
+<body>
+
+<header>
+    <!--     Logo -->
+    <div id="header-logo">
+        <img src="../images/mymusic_logo.png" alt="logo mymusic"/>
+    </div>
+
+    <!--     Titre -->
+    <div id="header-title">
+        <h1>My music</h1>
+    </div>
+
+    <div id="header-avatar">
+        <!--     Logo -->
+        <img src="../images/avatar-40x40.png" alt="avatar utilisateur"/>
+    </div>
+    <!--    informations sur le statut de connexion de l'utilisateur-->
+    <div id="authentification">ENI,connecté</div>
+
+    <nav id="header-menu">
+        <a href="monCompte">Mon compte</a> |
+        <a href="deconnection">Déconnexion</a>
+        <ul>
+            <li><a href="index.html"> Accueil </a></li>
+            <li><a href="formulaire.html"> Formulaire </a></li>
+            <li><a href="mediaPlayer.html"> Videos </a></li>
+            <li><a href="audioVideoPlayer.html"> Musique </a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main>
+    <label for="media-select"> Choisir une vidéo : </label>
+    <select id="media-select">
+            <option value="big_buck_bunny_427x240.indexed.ogg"> Big buck bunny</option>
+            <option value="tracker.mp4">Tracker</option>
+    </select>
+
+    <input type="button" value="Play" onclick="selectFile()"/>
+
+    <video src="" controls preload="auto" id="video-tag" width="320" height="200">
+    </video>
+
+</main>
+
+<script>
+    function selectFile() {
+        let val = document.getElementById("media-select").value;
+        document.getElementById("video-tag").src = "../media/videos/"+ val ;
+    }
+</script>
+
+</body>
+</html>

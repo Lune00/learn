@@ -1,0 +1,31 @@
+| <?xml version = '1.0'?>                                                       
+| <CLIENTS>                                                                     
+|    <CLIENT num="1">                                                           
+|       <NOCLI>1</NOCLI>                                                        
+|       <NOM>ROUSSEL</NOM>                                                      
+|       <PRENOM>Gilles</PRENOM>                                                 
+|       <ADRESSE>rue ENI</ADRESSE>                                              
+|       <TEL>0240731696</TEL>                                                   
+|    </CLIENT>                                                                  
+|    <CLIENT num="2">                                                           
+|       <NOCLI>2</NOCLI>                                                        
+|       <NOM>MACRAIGNE</NOM>                                                    
+|       <PRENOM>Marie Pierre</PRENOM>                                           
+|       <ADRESSE>rue Crebillon</ADRESSE>                                        
+|       <TEL>0240731696</TEL>                                                   
+|    </CLIENT>                                                                  
+|    <CLIENT num="3">                                                           
+|       <NOCLI>3</NOCLI>                                                        
+|       <NOM>MARTIN</NOM>                                                       
+|       <PRENOM>Bruno</PRENOM>                                                  
+|       <ADRESSE>Rue Charron</ADRESSE>                                          
+|       <TEL>0240731696</TEL>                                                   
+|    </CLIENT>                                                                  
+|    <CLIENT num="4">                                                           
+|       <NOCLI>4</NOCLI>                                                        
+|       <NOM>GABILLAUD</NOM>                                                    
+|       <PRENOM>Jerome</PRENOM>                                                 
+|       <ADRESSE>rue Charron</ADRESSE>                                          
+|       <TEL>02407316*96</TEL>                                                  
+|    </CLIENT>                                                                  
+| </CLIENTS>                                                                    

@@ -1,0 +1,242 @@
+---- 1. EXCEPTIONS PREDEFINIES
+--
+---- Traitement de plusieurs exceptions dans le meme bloc en
+---- subdivisant le bloc en plusieurs blocs avec chacun sa gestion d'exceptions
+--
+--DECLARE
+--    x INTEGER;
+--    v_nom VARCHAR2(5);
+--BEGIN
+--
+--    BEGIN
+--    x:='Martin';
+--    EXCEPTION
+--     WHEN value_error THEN --value_error : nom de l'exception
+--        DBMS_OUTPUT.put_line('Valeur numérique attendue!');
+--    END;
+--    
+--    BEGIN
+--    v_nom:='Jean-Michel';
+--    EXCEPTION
+--     WHEN value_error THEN --value_error : nom de l'exception
+--        DBMS_OUTPUT.put_line('Trop de caractères!');
+--     WHEN OTHERS THEN --OTHERS : quand je ne sais pas quelle erreur arrive
+--         DBMS_OUTPUT.put_line(SQLCODE);
+--         DBMS_OUTPUT.put_line(SQLERRM);
+--    END;
+--   
+--END;
+--/
+
+
+---- Exercice : on veut trouver la liste des employes d'un departement donné.
+---- Si le departement n'existe pas, exception, sinon on veut la liste
+--
+--DECLARE
+--
+--    v_myDep dept.deptno%type:=40;
+--    v_dept dept.deptno%type ;
+--    n_emp INTEGER;
+--    CURSOR c_list(v_num emp.deptno%type) IS 
+--        SELECT ename FROM emp WHERE deptno= v_num;
+--
+--BEGIN
+--
+--    --Provoquer l'exception avant d'ouvrir le curseur (pour rien si le dep n'existe pas)
+--    --un SELECT qui ne renvoie aucune donnée emet l'exception NO_DATA_FOUND
+--    SELECT deptno INTO v_dept FROM dept WHERE deptno=v_myDep;
+--    --Si il n'y a aucun employe dans le service le signaler
+--    SELECT COUNT(*) INTO n_emp FROM emp WHERE deptno=v_myDep;
+--
+--    IF n_emp = 0 THEN
+--         DBMS_OUTPUT.put_line('Il n''y a pas d''employés dans ce département.');
+--    END IF;
+--    
+--
+--
+--    FOR i IN c_list(v_mydep) LOOP
+--        DBMS_OUTPUT.put_line(i.ename);    
+--    END LOOP;
+--    
+--    EXCEPTION
+--        WHEN NO_DATA_FOUND THEN
+--         DBMS_OUTPUT.put_line('Le département '||v_mydep||' n''existe pas.');
+--        WHEN OTHERS THEN --OTHERS : quand je ne sais pas quelle erreur arrive
+--         DBMS_OUTPUT.put_line(SQLCODE);
+--         DBMS_OUTPUT.put_line(SQLERRM);
+--
+--END;
+--/
+
+
+---- 2. EXCEPTIONS DEFINIES PAR L'UTILISATEUR. 
+---- L'exception a un code mais elle n'est pas definie dans les exceptions prédéfinies par Oracle
+--
+--
+----CREATE TABLE t100( nom varchar2(5));
+--
+----On declare une nouvelle exception : DECLARE nomException EXCEPTION 
+----On l'associe au code de retour de l'exception avec PRAGMA EXCEPTION_INIT(nomException,code)
+--DECLARE trop EXCEPTION;
+--PRAGMA EXCEPTION_INIT(trop,-12899);
+--
+--BEGIN
+--
+--INSERT INTO t100 VALUES('Jean-Michel');
+--
+--EXCEPTION
+--    WHEN trop THEN
+--    DBMS_OUTPUT.PUT_LINE('Trop de caractères');
+--
+--END;
+--/
+
+
+-- 3. EXCEPTIONS PERSONALISEES
+--
+--DECLARE
+--
+--    v_myDep dept.deptno%type:=40;
+--    v_dept dept.deptno%type ;
+--    n_emp INTEGER;
+--    CURSOR c_list(v_num emp.deptno%type) IS 
+--        SELECT ename FROM emp WHERE deptno= v_num;
+--    
+--    --Declare une exception personalisée:
+--    NO_EMP_IN_DEPT EXCEPTION;
+--BEGIN
+--
+--    --Provoquer l'exception avant d'ouvrir le curseur (pour rien si le dep n'existe pas)
+--    --un SELECT qui ne renvoie aucune donnée emet l'exception NO_DATA_FOUND
+--    SELECT deptno INTO v_dept FROM dept WHERE deptno=v_myDep;
+--    --Si il n'y a aucun employe dans le service le signaler
+--    SELECT COUNT(*) INTO n_emp FROM emp WHERE deptno=v_myDep;
+--
+--    IF n_emp = 0 THEN
+--        --On RAISE l'exception (on emet l'exception, comme un signal)
+--        RAISE NO_EMP_IN_DEPT;
+--    END IF;
+--    
+--
+--    FOR i IN c_list(v_mydep) LOOP
+--        DBMS_OUTPUT.put_line(i.ename);    
+--    END LOOP;
+--    
+--    EXCEPTION
+--        WHEN NO_DATA_FOUND THEN
+--         DBMS_OUTPUT.put_line('Le département '||v_mydep||' n''existe pas.');
+--         
+--        WHEN NO_EMP_IN_DEPT THEN
+--        DBMS_OUTPUT.put_line('Il n''y a pas d''employés dans ce département.');
+--        
+--        WHEN OTHERS THEN --OTHERS : quand je ne sais pas quelle erreur arrive
+--         DBMS_OUTPUT.put_line(SQLCODE);
+--         DBMS_OUTPUT.put_line(SQLERRM);
+--
+--END;
+--/
+
+------ 4. EXCEPTIONS PROGRAMME RAISE_APPLICATION_ERROR
+---- Renvoie directement au END du bloc pincipal (rare en pratique)
+---- Exemple: si nombre employés superieur a 10 je sors de la procédure
+--DECLARE
+--
+--    v_number INT;
+--
+--BEGIN
+--
+--    SELECT COUNT(*) INTO v_number FROM emp;
+--    
+--    IF v_number > 10 THEN 
+--        RAISE_APPLICATION_ERROR(-20001,'Surcharge');
+--    END IF;
+--    
+--    DBMS_OUTPUT.PUT_LINE('Ce message n''apparait pas');
+--
+--END;
+--/
+
+
+-- Exceptions : traitement de plusieurs erreurs dans le meme bloc en
+---- subdivisant le bloc en plusieurs blocs avec chacun sa gestion d'exceptions
+--
+--DECLARE
+--    x INTEGER;
+--    v_nom VARCHAR2(5);
+--BEGIN
+--
+--    BEGIN
+--    x:='Martin';
+--    EXCEPTION
+--     WHEN value_error THEN --value_error : nom de l'exception
+--        DBMS_OUTPUT.put_line('Valeur numérique attendue!');
+--    END;
+--    
+--    BEGIN
+--    v_nom:='Jean-Michel';
+--    EXCEPTION
+--     WHEN value_error THEN --value_error : nom de l'exception
+--        DBMS_OUTPUT.put_line('Trop de caractères!');
+--     WHEN OTHERS THEN --OTHERS : quand je ne sais pas quelle erreur arrive
+--         DBMS_OUTPUT.put_line(SQLCODE);
+--         DBMS_OUTPUT.put_line(SQLERRM);
+--    END;
+--   
+--    
+--END;
+--/
+
+
+-- -- EXCEPTION PROPAGATION DANS LES BLOCS :
+-- -- Si une exception est émise dans un sous-bloc, si elle n'est pas traitée directement
+-- -- dans le sous-bloc alors la procédure verifie si elle est traitée au bloc supérieur (etc)
+-- -- si la procédure rencontre un traitement de l'exception a un niveau supérieur le pointeur
+-- -- s'y place et poursuit le bloc exception du bloc parent.
+--
+--DECLARE
+--
+--    v_myDep dept.deptno%type:=56;
+--    v_dept dept.deptno%type ;
+--    n_emp INTEGER;
+--    CURSOR c_list(v_num emp.deptno%type) IS 
+--        SELECT ename FROM emp WHERE deptno= v_num;
+--    
+--    --Declare une exception personalisée:
+--    NO_EMP_IN_DEPT EXCEPTION;
+--BEGIN
+--
+--
+--    BEGIN
+--    --Provoquer l'exception avant d'ouvrir le curseur (pour rien si le dep n'existe pas)
+--    --un SELECT qui ne renvoie aucune donnée emet l'exception NO_DATA_FOUND
+--        SELECT deptno INTO v_dept FROM dept WHERE deptno=v_myDep;
+--    --Si il n'y a aucun employe dans le service le signaler
+--        SELECT COUNT(*) INTO n_emp FROM emp WHERE deptno=v_myDep;
+--        IF n_emp = 0 THEN
+--        --On RAISE l'exception (on emet l'exception, comme un signal)
+--        RAISE NO_EMP_IN_DEPT;
+--        END IF;
+--        FOR i IN c_list(v_mydep) LOOP
+--        DBMS_OUTPUT.put_line(i.ename);    
+--        END LOOP;
+--        
+--        EXCEPTION
+--        WHEN NO_DATA_FOUND THEN
+--         DBMS_OUTPUT.put_line('Le département '||v_mydep||' n''existe pas.');
+--    END;
+--    
+--     DBMS_OUTPUT.put_line('ICI');
+--    
+--    EXCEPTION
+--        
+--         
+--        WHEN NO_EMP_IN_DEPT THEN
+--        DBMS_OUTPUT.put_line('Il n''y a pas d''employés dans ce département.');
+--        
+--        WHEN OTHERS THEN --OTHERS : quand je ne sais pas quelle erreur arrive
+--         DBMS_OUTPUT.put_line(SQLCODE);
+--         DBMS_OUTPUT.put_line(SQLERRM);
+--
+--END;
+--/
+

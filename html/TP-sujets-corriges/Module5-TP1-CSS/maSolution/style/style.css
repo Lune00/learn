@@ -1,0 +1,81 @@
+@media screen and (max-width: 500px) {
+    body{
+        background-color: red;
+    }
+}
+
+body{
+    /*background-color: #e8f2ff;*/
+    font-family: 'Turret Road', cursive;
+}
+
+header{
+    color: darkorange;
+}
+header h1:hover{
+    color: aqua;
+}
+
+.nav-menu{
+    list-style-type: none;
+    background-color: black;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.nav-menu li{
+    display: inline-block;
+    color: black;
+    width: 100px;
+    text-align: center;
+    background-color:white ;
+}
+
+a{
+    link:black;
+}
+a:visited{
+    color:black;
+}
+a:hover{
+    color : blue;
+}
+
+#header-title, #header-logo{
+    display: inline-block ;
+    left : 10px;
+    top : 10px;
+    /* aligne les elements inline ou inline-block sur le meme niveau du container*/
+    vertical-align: top;
+}
+
+.headergauche div{
+    display: inline-block;
+}
+
+#bio-image-band{
+    position : relative;
+    display: block;
+}
+
+.usr-data{
+    position: absolute;
+    right: 100px;
+    top:10px;
+}
+#header-avatar{
+    float: left;
+}
+#header-usr-status{
+    color: white;
+}
+
+#wrapper{
+    display: flex;
+}
+
+#wrapper div{
+    flex: 1 0 50%;
+}
+

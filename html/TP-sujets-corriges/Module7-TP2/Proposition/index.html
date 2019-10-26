@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ENI en Ligne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="jquery/jquery-3.2.1.js"></script>
+    <script src="bootstrap-3.3.7/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<!-- Site One Page -->
+<header class="container-fluid header">
+    <!-- 960 px -->
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#eniNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://www.eni-ecole.fr/"><img class="img-responsive"
+                                                                                  src="img/logo_ENI.png" alt="ENI"/></a>
+
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="eniNavbar">
+                    <ul class="nav navbar-nav">
+                        <!-- liens d'ancrage -->
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#learn">Etapes pour apprendre</a></li>
+                        <li><a href="#training">Formations en ligne</a></li>
+                        <li><a href="#registration">Inscription</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="container-fluid banner">
+    <div class="ban">
+        <img src="img/banniere.png" alt="bannière du site"/>
+    </div>
+    <div class="inner-banner">
+        <h1>Bienvenue sur notre école en ligne</h1>
+    </div>
+</section>
+<section class="container-fluid learn">
+    <div class="container">
+        <div class="row">
+            <h2 id="learn">3 étapes pour apprendre</h2>
+            <hr class="separator">
+            <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                <h2>Visionnez une vidéo</h2>
+                <p>Aprenez par vous même en visionnant une vidéo</p>
+            </article>
+            <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                <h2>Réalisez un exercice</h2>
+                <p>Réalisez un exercice en suivant un énoncé et vérifiez votre solution en allant voir la 3ème rubrique
+                    "Visionnez une vidéo de corrigé"</p>
+            </article>
+            <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                <h2>Visionnez une vidéo de corrigé</h2>
+                <p>Suivez les explications du formateur sur la création de la solution</p>
+            </article>
+        </div>
+    </div>
+</section>
+<section class="container-fluid training">
+    <div class="container">
+        <h2 id="training">Nos formations en ligne</h2>
+        <hr class="separator">
+        <h3 class="col-md-12 col-lg-12  col-xs-12 col-sm-12">Bac +2</h3>
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training">
+            <img src="img/DevWebWebMobile_Bac+2.png" alt="Développeur·euse Web et Web Mobile"/>
+        </article>
+
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training">
+            <img src="img/TechSystRes_Bac+2.png" alt="Technicien·ne Supérieur·e Systèmes et Réseaux"/>
+        </article>
+        <h3 class="col-md-12 col-lg-12  col-xs-12 col-sm-12">Bac +3</h3>
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training">
+            <img src="img/LicenceInfoAlt_Bac+3.png" alt="Licence Informatique en alternance délivrée par le CNAM"/>
+        </article>
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training-clear">
+        </article>
+        <h3 class="col-md-12 col-lg-12  col-xs-12 col-sm-12">Bac +4</h3>
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training">
+            <img src="img/AdminSystRes_Bac+4.png" alt="Administrateur·rice Système et Réseau"/>
+        </article>
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training">
+            <img src="img/ConeptDevAppli_Bac+4.png" alt="Concepteur·rice Développeur·euse d’Applications"/>
+        </article>
+        <h3 class="col-md-12 col-lg-12  col-xs-12 col-sm-12">Bac +5</h3>
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training">
+            <img src="img/ExpertSecuDigit_Bac+5.png" alt="Expert·e en Sécurité Digitale"/>
+        </article>
+        <article class="col-md-6 col-lg-6  col-xs-12 col-sm-12 item-training">
+            <img src="img/ManagSystInfoInfra_Bac+5.png"
+                 alt="Manager·euse des Systèmes d'Information et d'Infrastructure"/>
+        </article>
+
+    </div>
+</section>
+
+<footer class="container-fluid footer">
+    <div class="container">
+        <div class="row">
+            <h2 id="registration">Inscrivez-vous !</h2>
+            <hr class="separator">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="well well-sm">
+                    <form class="form-horizontal" action="" method="post">
+                        <fieldset>
+                            <!-- Name input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label required" for="name">Nom</label>
+                                <div class="col-md-9">
+                                    <input id="name" name="name" type="text" placeholder="Nom"
+                                           class="form-control" required="required" style="font-size:25px;">
+                                </div>
+                            </div>
+                            <!-- Name input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label required" for="name">Prénom</label>
+                                <div class="col-md-9">
+                                    <input id="firstname" name="firstname" type="text" placeholder="Prénom"
+                                           class="form-control" required="required" style="font-size:25px;">
+                                </div>
+                            </div>
+
+                            <!-- Email input-->
+                            <div class="form-group">
+                                <label class="required col-md-3 control-label required" for="email">E-mail</label>
+                                <div class="col-md-9">
+                                    <input id="email" name="email" type="text" placeholder="Email"
+                                           class="form-control" required="required" style="font-size:25px;">
+                                </div>
+                            </div>
+
+                            <!-- Email input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="birthday">Date de naissance</label>
+                                <div class="col-md-9">
+                                    <input id="birthday" name="birthday" type="date" class="form-control" style="font-size:25px;">
+                                </div>
+                            </div>
+
+                            <!-- Form actions -->
+                            <div class="form-group">
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" class="btn btn-primary btn-lg"  style="font-size:25px;">Envoyer</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1 @@
+select REFART from ARTICLES where QTESTK<20;

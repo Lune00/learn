@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE family SYSTEM "family.dtd">
+<family lastname="Smith">
+<member memberid="m1">Sarah</member>
+<member memberid="m2">Bob</member>
+<member memberid="m3" mom="m1" dad="m2">Joanne</member>
+<member memberid="m4" mom="m1" dad="m2">Jim</member>
+</family>

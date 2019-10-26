@@ -1,0 +1,46 @@
+.menu-gauche{
+    display:inline;
+    padding: 0;
+}
+
+br{
+	margin-top: 20px;
+}
+
+.btn-default{
+	border: 1px solid grey;
+}
+
+.form-control-range{
+	min:0;
+	max:100;
+	value=50;
+}
+
+ul{
+	list-style: none;
+}
+
+a,li {
+	display: block;
+    text-align: center;
+    text-decoration:none;
+    min-width: 150px;
+}
+a{
+	box-shadow: 0px 0px 4px 0px #c0c0c0;
+}
+
+li a:hover {
+    box-shadow: 0px 0px 6px 0px #46b8da;
+}
+
+.list-group a:hover{
+box-shadow: 0px 0px 6px 0px #46b8da;
+}
+
+.shadow {
+    margin-top: 20px;
+    box-shadow: 0px 10px 25px 0px #555;
+    min-width: 500px;
+}

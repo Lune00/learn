@@ -1,0 +1,47 @@
+-- Exercices curseurs
+-- 3. Afficher la liste dse employés (nom,salaire) en utilisant
+--    la boucle WHILE
+
+DECLARE
+    CURSOR c_emp IS SELECT ename,sal FROM emp;
+    v_emp_name emp.ename%type;
+    v_emp_sal emp.sal%type;
+
+BEGIN
+
+OPEN c_emp;
+
+    --Permet d'initialiser c_emp%found = true
+    FETCH c_emp INTO v_emp_name,v_emp_sal;
+    WHILE c_emp%found LOOP
+        DBMS_OUTPUT.put_line('Nom: '||v_emp_name ||' Salaire: '||v_emp_sal);
+        FETCH c_emp INTO v_emp_name,v_emp_sal;
+    END LOOP;
+
+CLOSE c_emp;
+
+END;
+/
+  UPDATE emp SET sal=v_emp_new_sal WHERE ename=v_emp_name; 
+
+-- 4. Augmenter les MANAGER de 10% en utilisant FOR UPDATE
+
+DECLARE
+
+CURSOR c_MANAGER IS SELECT sal FROM emp WHERE lower(JOB)='manager' FOR UPDATE;
+
+BEGIN
+
+FOR i IN c_MANAGER LOOP
+    UPDATE emp SET sal=1.1*sal WHERE CURRENT OF c_MANAGER; 
+END LOOP;
+COMMIT;
+
+END;
+/
+
+
+
+
+
+

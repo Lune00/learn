@@ -1,0 +1,146 @@
+﻿<!doctype html>
+   <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <title>player HTML</title>
+        <meta charset="UTF-8" />
+        <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="bootstrap-3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="css-simple/style.css" rel="stylesheet" />
+        <link href="css-simple/impression.css" rel="stylesheet" media="print" />
+
+    
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">Z5HNVW24N33T-678105430-1446</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">4c98a1f2-17dc-4300-a7d0-9f44c1b801dc</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">http://inet/eni-transverse/ecole-numérique/_layouts/15/DocIdRedir.aspx?ID=Z5HNVW24N33T-678105430-1446, Z5HNVW24N33T-678105430-1446</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+    <body class="container-fluid col-sm-10 col-sm-offset-1">
+
+        <div class="noimpression">
+            <span class="col-xs-12 visible-xs alert alert-danger">extra small</span>
+            <span class="col-sm-12 visible-sm alert alert-info">small</span>
+            <span class="col-md-12 visible-md alert alert-success">medium</span>
+            <span class="col-lg-12 visible-lg alert alert-warning">large</span>
+        </div>
+        <hr />
+
+        <section class="shadow col-xs-12" >
+            <header class="col-xs-12">
+
+                <div class="col-sm-12 col-md-3 noimpression">
+                    <div class="row">
+                        <button id="precedent" class="col-xs-3 btn btn-default"><span class="glyphicon glyphicon-circle-arrow-left"></span></button>
+                        <button id="play" class="col-xs-4 col-xs-offset-1 btn btn-default"><span class="glyphicon glyphicon-play-circle"></span></button>
+                        <button id="suivant" class="col-xs-3 col-xs-offset-1 btn btn-default"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>  
+                    </div>
+                    <br>
+                    <div class="row">
+                        <button id="minVolume" class="col-xs-2 col-md-2 btn btn-default"><span class="glyphicon glyphicon-volume-down"></span></button>
+                        <div class="col-xs-8">
+                            <input id="rangeVolume" type="range" value="0.8" min="0" max="1" step="0.2" />
+                        </div>
+                        <button id="maxVolume" class="btn btn-default col-xs-2"><span class="glyphicon glyphicon-volume-up"></span></button>
+
+                    </div>
+                </div>
+
+                <br class="visible-xs visible-sm">
+
+                <div id="focus" class="col-sm-6 col-md-4 col-md-offset-1">
+                    <h4>Nom artiste</h4>
+                    <h5>Titre de la chanson</h5>
+                    <p><input id="rangeAvancement" type="range" value="0" min="0" max="100" step="1" /></p>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-md-offset-1" >
+                    <br class="visible-xs visible-sm">
+                    <br class="visible-xs visible-sm">
+                    <form class="form-inline right">
+                        <div class="form-group right">
+                            <label class="sr-only" for="exampleInputAmount">Rechercher</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="recherche">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </header>
+
+			<nav  class="col-md-2 col-sm-3 col-xs-12 noimpression">
+				<ul id="menuGauche"  >
+					<li class="list-group-item">
+						<a href="">Music</a>   
+					</li>
+					<li class="list-group-item">    
+						<a href="">Vidéos</a>   
+					</li>
+					<li class="list-group-item">
+						<a href="">Podcasts</a>
+					</li>
+				</ul>
+			</nav>
+
+            <article class="col-md-10 col-sm-9 col-xs-12" >
+                <ul id="listeMedia">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <a href="#" >
+                            <img src="pochettes/175/1.jpg" alt=""/>
+                            <h3>Titre</h3>
+                            <p>Nom artiste</p>
+                        </a>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <a href="#" >
+                            <img  src="pochettes/175/2.jpg" />
+                            <h3>Titre</h3>
+                            <p>Nom artiste</p>
+                        </a>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <a href="#">
+                            <img  src="pochettes/175/3.jpg" />
+                            <h3>Titre</h3>
+                            <p>Nom artiste</p>
+                        </a>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <a href="#">
+                            <img  src="pochettes/175/4.jpg" />
+                            <h3>Titre</h3>
+                            <p>Nom artiste</p>
+                        </a>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <a href="#">
+                            <img  src="pochettes/175/5.jpg" />
+                            <h3>Titre</h3>
+                            <p>Nom artiste</p>
+                        </a>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <a href="#">
+                            <img  src="pochettes/175/6.jpg" />
+                            <h3>Titre</h3>
+                            <p>Nom artiste</p>
+                        </a>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <a href="#">
+                            <img  src="pochettes/175/7.jpg" />
+                            <h3>Titre</h3>
+                            <p>Nom artiste</p>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <div class="clearfix"></div>
+  <br /><br /><br /><br />
+
+    </body>    
+</html>

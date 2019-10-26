@@ -1,0 +1,1 @@
+lock table commandes in exclusive mode;

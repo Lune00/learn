@@ -1,0 +1,10 @@
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'ALBERT', 'Anne', '13 rue des alpes', '0601020304', sysdate-60, 1);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'BERNAUD', 'Barnabé', '6 rue des bécasses', '0602030105', sysdate-10, 3);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'CUVARD', 'Camille', '52 rue des cerisiers', '0602010509', sysdate-100, 6);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'DUPOND', 'Daniel', '11 rue des daims', '0610236515', sysdate-250, 12);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'EVROUX', 'Eglantine', '34 rue des elfes', '0658963125', sysdate-150, 6);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'FREGEON', 'Fernand', '11 rue des Francs', '0602036987', sysdate-400, 6);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'GORIT', 'Gaston', '96 rue de la glacerie ', '0684235781', sysdate-150, 1);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'HEVARD', 'Hector', '12 rue haute', '0608546578', sysdate-250, 12);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'INGRAND', 'Irène', '54 rue des iris', '0605020409', sysdate-50, 12);
+insert into membres (numero, nom, prenom, adresse, mobile, adhesion, duree) values (seq_membre.nextval, 'JUSTE', 'Julien', '5 place des Jacobins', '0603069876', sysdate-100, 6);

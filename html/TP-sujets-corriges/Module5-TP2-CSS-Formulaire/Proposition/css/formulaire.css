@@ -1,0 +1,123 @@
+#modal-dialog-form{
+    display: block;
+    height: auto;
+    left: 597px;
+    top: 17px;
+    width: 700px;
+	margin-top:10px;
+    border-radius: 10px;
+    
+    background: #000000 url("dark-hive/images/ui-bg_loop_25_000000_21x21.png") repeat scroll 50% 50%;
+    border: 1px solid #555555;
+    color: #ffffff;
+    padding: 10px;
+    box-shadow: 5px 5px 7px #90D7E9;
+}
+
+
+#modal-dialog-form h2 {
+    background: #444444 url("dark-hive/images/ui-bg_highlight-soft_44_444444_1x100.png") repeat-x scroll 50% 50%;
+    border: 1px solid #333333;
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 10px;
+    border-radius: 7px;
+}
+
+.dialog-form {
+	color: #fff;
+    font-family: 'Open Sans Condensed',sans-serif;
+}
+
+/*	Divisions	*/
+.dialog-form div.form-label {
+	display: inline-block;
+	padding: 4px;
+    width: 135px;
+	
+}
+
+.dialog-form .form-field {
+	display: inline-block;
+	padding: 4px;
+    width: 160px;
+	
+}
+
+.dialog-form .form-label {
+	text-align: right;
+}
+
+.dialog-form .form-separator {
+	margin-top: 12px;
+}
+
+.dialog-form .form-message {
+	border-bottom: 1px solid #fff;
+    font-weight: bold;
+	margin-bottom: 16px;
+}
+
+/*	Champs de formulaire	*/
+.dialog-form .fld-field {
+	color: #000;
+	font-family: 'Open Sans Condensed',sans-serif;
+    width: 150px;
+    padding-left: 5px;
+}
+
+.dialog-form input:invalid {
+	border: 3px solid red;
+}
+
+.dialog-form input:focus {
+	border: 3px solid blue;
+}
+
+.dialog-form input:valid {
+	border: 3px solid green;
+}
+
+/*	Tableau pour abonnement	*/
+.subscription-table td {
+	border: 1px solid #009688;
+	padding: 4px;
+	text-align: center;
+	vertical-align: middle;
+    width: 128px;
+}
+
+.subscription-table .td-newsletter {
+	border: 0;
+	padding: 0;
+    text-align: left;
+}
+
+#id-cb-newsletter-partners{
+    margin-left: 20px;
+}
+
+#bouton{
+    text-align: center;
+    margin-top: 25px;
+}
+.boutonForm{
+    cursor: pointer;
+    margin: 0.5em 0.4em 0.5em 0;
+    background: #222222 url("dark-hive/images/ui-bg_highlight-soft_35_222222_1x100.png") repeat-x scroll 50% 50%;
+    border: 1px solid #444444;
+    color: #eeeeee;
+    font-weight: normal;
+    border-radius: 6px;
+    width: 80px;
+    height: 30px;
+}
+
+.boutonForm:hover{
+    cursor: pointer;
+    margin: 0.5em 0.4em 0.5em 0;
+    background: #222222 url("dark-hive/images/ui-bg_highlight-hard_20_0972a5_1x100.png") repeat-x scroll 50% 50%;
+    border: 1px solid #009688;
+    color: #eeeeee;
+    
+}

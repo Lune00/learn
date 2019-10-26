@@ -1,0 +1,92 @@
+--TRIGGER 1. Evenements de base de donnée
+
+--Comportement de la VUE: 
+CREATE OR REPLACE VIEW v_manager
+    AS SELECT * FROM emp 
+    WHERE job='MANAGER';
+    
+SELECT * FROM v_manager;
+
+--On peut faire un INSERT dans une vue mais que si elle ne fait reference
+--qu'a une table sans jointure. Dans ce cas aucune ambiguité sur la cible du INSERT
+INSERT INTO v_manager(empno,ename,deptno)
+    VALUES('4234','Jean-Michel',10);
+COMMIT;
+
+--On pourrait mettre un trigger sur la vue pour dire, si tu INSERT sur la vue
+--qui recupere les managers tu lui associes le job de MANAGER.
+
+
+
+-- Exercice : Un trigger enregistre dans une table d'archivage
+--l'ancien salaire d'un employé quand il est modifié, avec sa date de modification
+
+CREATE TABLE t_archive(code NUMBER,nom varchar2(20),ancienSalaire NUMBER(7,2),
+                       dateModificationSalaire DATE);
+                       
+--Declaration d'un TRIGGER                       
+CREATE OR REPLACE TRIGGER tr_HistoriseSalaire
+    AFTER UPDATE OF sal ON emp FOR EACH ROW   
+    BEGIN
+    INSERT INTO t_archive 
+        VALUES(:OLD.empno,:OLD.ename,:OLD.sal,sysdate);
+END;
+/
+
+UPDATE emp SET sal=5000 WHERE ename='SMITH';
+
+
+-- Exercice : dans la table departement, redondance de données avec
+-- une colonne nombre d'employés dans la table. Mettre en place un trigger
+-- qui met a jour automatiquement les valeurs dans cette colonne
+
+--Agit sur delete ou update ou insert
+CREATE OR REPLACE TRIGGER tr_update_NbEmployes
+    AFTER UPDATE OF deptno OR INSERT OR DELETE ON emp
+    FOR EACH ROW
+    BEGIN
+    
+    IF INSERTING THEN
+    --le :New fait reference a la ligne qui a été INSERT
+      UPDATE dept SET nbemp=nbemp+1 WHERE deptno=:NEW.deptno ;
+    ElSIF DELETING THEN
+    --le :Old fait reference a la ligne qui a été DELETE
+       UPDATE dept SET nbemp=nbemp-1 WHERE deptno=:OLD.deptno ;
+    ELSIF UPDATING THEN -- change de departement
+    --le :New et :Old font reference a la ligne qui a été UPDATE
+      UPDATE dept SET nbemp=nbemp+1 WHERE deptno=:NEW.deptno ;
+        UPDATE dept SET nbemp=nbemp-1 WHERE deptno=:OLD.deptno ;
+    END IF;
+    
+END;
+/
+--TESTS:
+INSERT INTO emp(EMPNO,ename,deptno) VALUES(2222,'Jeannot',20);
+UPDATE emp SET deptno=40 WHERE ename='Jeannot';
+SELECT * FROM dept;
+
+
+
+
+-- TRIGGER 2. Evenements systeme
+
+--On recense les utilisateurs qui se sont connectés
+
+CREATE TABLE t_connect(usr VARCHAR2(20), date_connect DATE);
+
+CREATE OR REPLACE TRIGGER connectionsLog
+AFTER LOGON ON DATABASE
+BEGIN
+
+INSERT INTO t_connect 
+    VALUES(user,sysdate);
+
+END;
+/
+
+
+
+
+
+
+

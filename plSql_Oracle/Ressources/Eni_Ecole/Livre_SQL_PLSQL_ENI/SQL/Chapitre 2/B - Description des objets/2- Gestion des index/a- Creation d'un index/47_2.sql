@@ -1,0 +1,1 @@
+create index IK_CLID on CLIDIVERS (NOMCLIENT, ADRESSE);

@@ -1,0 +1,1 @@
+CREATE TYPE TabCommandes AS VARRAY(50) OF LaCommande;

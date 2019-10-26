@@ -1,0 +1,84 @@
+- Atelier 3 - Exercices
+
+-- 1. Afficher le salaire d'un employé. Si l'employé n'existe pas
+--    lever une exception qui affiche 'Employé inexistant'
+--DECLARE
+--
+--    v_emp_name emp.ename%type:='SMITH';
+--    --CURSOR c_emp(v_nom emp.ename%type) IS SELECT sal FROM emp WHERE ename=v_nom;
+--    --EMP_DO_NOT_EXIST EXCEPTION;
+--    v_sal_emp emp.sal%type;
+--
+--BEGIN
+--
+--    SELECT sal INTO v_sal_emp FROM emp WHERE ename=v_emp_name;
+--     DBMS_OUTPUT.put_line('Nom: '||v_emp_name||' Salaire: '||v_sal_emp);
+--
+--EXCEPTION
+--    WHEN NO_DATA_FOUND THEN
+--        DBMS_OUTPUT.put_line('Employé inexistant');
+--
+--
+--END;
+--/
+
+
+-- 2. Augmenter le salaire d'un employé, si un nouveau salaire dépasse
+-- celui du KING, lever une excetion avec un message 'Pas Possible'
+
+
+DECLARE
+
+    v_emp_name emp.ename%type:='SMITH';
+    v_sal_emp emp.sal%type;
+    v_emp_new_sal emp.sal%type:=15000;
+    v_KING_sal emp.sal%type;
+
+    SALARY_GREATER_THAN_KING EXCEPTION;
+
+BEGIN
+
+    SELECT sal INTO v_KING_sal FROM emp WHERE ename='KING';
+    --Recuperer le nom de l'emp qui a le salaire le plus important
+    --SELECT ename FROM emp WHERE SELECT MAX(sal) FROM emp;
+
+    SELECT sal INTO v_sal_emp FROM emp WHERE ename=v_emp_name;
+    DBMS_OUTPUT.put_line('Nom: '||v_emp_name||' Salaire: '||v_sal_emp);
+    DBMS_OUTPUT.put_line('Nouveau salaire: '||v_emp_new_sal);
+    DBMS_OUTPUT.put_line('Salaire de KING: '||v_king_sal);
+    
+    IF v_emp_new_sal > v_KING_sal THEN
+        RAISE SALARY_GREATER_THAN_KING;
+    ELSE
+     UPDATE emp SET sal=v_emp_new_sal WHERE ename=v_emp_name; 
+     DBMS_OUTPUT.put_line('Salaire de '||v_emp_name||' mis à jour('||
+                    v_sal_emp||'->'||v_emp_new_sal||')');
+     COMMIT;
+    END IF;
+    
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.put_line('Employé inexistant');
+     WHEN SALARY_GREATER_THAN_KING THEN
+        DBMS_OUTPUT.put_line('Le salaire de '||v_emp_name||' ne peut pas exceder le salaire du KING');
+
+END;
+/
+             
+-- 3. Inserer un nouveau département 'MATH APPLIQUEE'. Lever une exception
+--    avec le message 'VALEUR TROP GRANDE'. Utiliser PRAGMA
+     
+DECLARE
+    --v_name_dept dept.dname%type:='MATH APPLIQUEE';
+    DNAME_TOO_LONG EXCEPTION;
+    PRAGMA EXCEPTION_INIT(DNAME_TOO_LONG,-12899);
+
+BEGIN
+
+    INSERT INTO dept VALUES(60,'MATHS APPLIQUEES','BOSTON');
+    EXCEPTION
+        WHEN DNAME_TOO_LONG THEN
+        DBMS_OUTPUT.put_line('Nom du département trop long');
+    
+END;
+/

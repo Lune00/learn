@@ -1,0 +1,1 @@
+alter table CLIENTS set unsued(TEL);

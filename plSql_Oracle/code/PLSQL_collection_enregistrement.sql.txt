@@ -1,0 +1,54 @@
+-- COLLECTIONS(TABLE,VARRAY) [homogene en type] ET ENREGISTREMENTS [heterogene en type]
+
+--COLLECTION : 1. TABLE : taille dynamique
+--             différence avec une table a plusieurs colonnes? CONFUSION!!
+
+DECLARE 
+    TYPE maTable IS TABLE OF NUMBER;
+    v1 maTable;
+BEGIN
+    v1:=maTable(12,14,29);
+    DBMS_OUTPUT.put_line( v1(2) );
+END;
+/
+
+--COLLECTION : 2. VARRAY: taille max. Il doit ETRE INITIALISE avec un moins une valeur!!
+
+DECLARE
+    TYPE calendrier IS VARRAY(365) OF DATE;
+    --Doit etre initialisé pour ajouter le premier élément
+    v_date calendrier:=calendrier(TO_DATE(sysdate));
+BEGIN
+    --Ajout manuellement un élément
+    v_date.EXTEND;
+    v_date(2):='15/03/2000';
+    DBMS_OUTPUT.put_line( v_date(1) );
+
+END;
+/
+
+
+--ENREGISTREMENT
+
+DECLARE
+
+    TYPE monRecord IS RECORD (
+        empno emp.empno%type,
+        ename emp.ename%type,
+        sal emp.sal%type,
+        dept emp.deptno%type);
+        
+    v_emp monRecord;
+BEGIN
+
+    v_emp.empno:=5000;
+    v_emp.ename:='Jean-Michel';
+    v_emp.sal:='2340';
+    v_emp.dept:='20';
+    
+    INSERT INTO emp(empno,ename,sal,deptno)
+        VALUES(v_emp.empno, v_emp.ename, v_emp.sal, v_emp.dept);
+
+END;
+/
+

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <title>My Music</title>
+    <meta charset="UTF-8">
+
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/nav.css"/>
+	<link rel="stylesheet" href="css/formulaire.css"/>
+</head>
+
+<body>
+    <header>
+        <div id="header-logo">
+            <!-- logo -->
+            <img src="images/mymusic_logo.png" alt="My Music logo" />
+        </div>
+        <div id="header-slogan">
+            <!-- Slogan -->
+            <h1>My music</h1>
+        </div>
+        <div id="header-user">
+            <!-- information utilisateur -->
+            <div id="header-user-avatar">
+                <!-- photo utilisateur -->
+                <img src="images/avatar/avatar-tux_dark_vador_sabre.png" width="75px" alt="Photo utilisateur" />
+            </div>
+            <div id="header-user-infos">
+                <!-- status utilisateur -->
+                <div id="header-user-name">
+                    <!-- nom / prénom -->
+                    ENI, connecté
+                </div>
+                <div id="header-user-account">
+                    <!-- options utilisateur -->
+                    <a href="#" id="my-account">Mon compte</a> | <a href="#">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="mymusic-biographie.html"><span>Accueil</span></a></li>
+
+                <li><a href="formulaire.html"><span>Formulaire</span></a></li>
+
+               <li><a href="jeux.html"><span>Jeux</span></a></li>
+				
+				<li><a href="musiques.html"><span>Musiques</span></a></li>
+
+            </ul>
+        </nav>
+        <!-- Ajout TP Formulaire -->
+        <div id="modal-dialog-form" class="dialog-form" title="Mon compte">
+            <h2>Mon compte</h2>
+            <!-- formulaire "mon compte" -->
+            <form name="form_compte" action="" method="get">
+                <div class="form-message">Vos informations personnelles</div>
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="fld-name">Nom : </label>
+                    </div>
+                    <div class="form-field">
+                        <input id="fld-name" type="text" class="fld-field" required="required" placeholder="Votre nom ?"/>
+                    </div>
+                    <div class="form-label">
+                        <label for="fld-dateNaissance">Date de naissance : </label>
+                    </div>
+                    <div class="form-field">
+                        <input id="fld-dateNaissance" type="date" class="fld-field" />
+                    </div>
+                </div>
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="fld-first-name">Prénom : </label>
+                    </div>
+                    <div class="form-field">
+                        <input id="fld-first-name" class="fld-field" type="text" required="required" placeholder="Votre prénom ?"/>
+                    </div>
+                    <div class="form-label">
+                        <label for="fld-favorite">Groupe préféré : </label>
+                    </div>
+                    <div class="form-field">
+                        <select id="fld-favorite" size="1" class="fld-field">
+                            <optgroup label="Metal">
+                                <option>Epica</option>
+                                <option>Symfony X</option>
+                                <option>Sabaton</option>
+                                <option>Stratovarius</option>
+                                <option>Nightwish</option>
+                            </optgroup>
+                            <optgroup label="Rap">
+                                <option>Eminem</option>
+                                <option>NTM</option>
+                            </optgroup>
+                            <optgroup label="Rock">
+                                <option>Oasis</option>
+                                <option>U2</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="fld-email">Email : </label>
+                    </div>
+                    <div class="form-field">
+                        <input id="fld-email" type="email" class="fld-field" required="required" placeholder="Votre email ?"/>
+                    </div>
+
+                    <div class="form-label">
+                        <label for="fld-tel">Téléphone : </label>
+                    </div>
+                    <div class="form-field">
+                        <input id="fld-tel" type="tel" class="fld-field" required="required" placeholder="Votre téléphone ?"/>
+                    </div>
+                </div>
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="fld-password">Mot de passe : </label>
+                    </div>
+                    <div class="form-field">
+                        <input id="fld-password" type="password" class="fld-field" required="required" />
+                    </div>
+                    <div class="form-label">
+                        <label for="fld-repeat-password">Répéter le mot de passe : </label>
+                    </div>
+                    <div class="form-field">
+                        <input id="fld-repeat-password" type="password" class="fld-field" required="required" />
+                    </div>
+                </div>
+                <div class="form-separator"></div>
+                <div class="form-message">Votre formule abonnement</div>
+                <div>
+                    <table id="subscription-table" class="subscription-table">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>
+                                <input type="radio" id="rb-premium-plus" name="rb-subscription" />
+                                <label for="rb-premium-plus">Premium+</label>
+                            </th>
+                            <th>
+                                <input type="radio" id="rb-premium" name="rb-subscription" />
+                                <label for="rb-premium">Premium</label>
+                            </th>
+                            <th>
+                                <input type="radio" id="rb-discovery" name="rb-subscription" />
+                                <label for="rb-discovery">Discovery</label>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Accès web</th>
+                            <td><img src="images/icon-ok-32x32.png" alt="icone OK" /></td>
+                            <td><img src="images/icon-ok-32x32.png" alt="icone OK" /></td>
+                            <td><img src="images/icon-ok-32x32.png" alt="icone OK" /></td>
+                        </tr>
+                        <tr>
+                            <th>Accès mobile</th>
+                            <td><img src="images/icon-ok-32x32.png" alt="icone OK" /></td>
+                            <td><img src="images/icon-ok-32x32.png" alt="icone OK" /></td>
+                            <td><img src="images/icon-not-ok-32x32.png" alt="KO" /></td>
+                        </tr>
+                        <tr>
+                            <th>Ecoute illimité</th>
+                            <td><img src="images/icon-ok-32x32.png" alt="icone OK" /></td>
+                            <td><img src="images/icon-not-ok-32x32.png" alt="KO" /></td>
+                            <td><img src="images/icon-not-ok-32x32.png" alt="KO" /></td>
+                        </tr>
+                        <tr>
+                            <th>Tarifs</th>
+                            <td>11,99€/mois</td>
+                            <td>5,99€/mois</td>
+                            <td>Gratuit 1 mois</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td class="td-newsletter" colspan="3">
+                                <input id="cb-newsletter" type="checkbox" />
+                                <label for="cb-newsletter">Recevoir nos newsletters</label>
+                                <input id="cb-newsletter-partners" type="checkbox" />
+                                <label for="cb-newsletter-partners">Recevoir les newsletters de nos partenaires</label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="bouton">
+                    <input type="reset" name="btAnnuler" value="Annuler" class="boutonForm" title="Annuler" />
+                    <input type="submit" name="btValider" value="Valider" class="boutonForm" title="Valider"/>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+		<hr>
+        <!-- pied de page -->
+        <div id="footer-author">
+            <!-- auteur -->
+            <a href="mailto:contact@eni-ecole.fr" title="Si vous désirez nous écrire">ENI ECOLE</a>
+        </div>
+        <div id="footer-copyright">
+            <!-- copyright -->
+            <a href="http://www.eni-ecole.fr" title="Eni ECOLE " target="_blank">Copyright&copy; ENI ECOLE Informatique </a>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
