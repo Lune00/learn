@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 /* use flex property of the wrapper. stretch value equalize both page content and sidebar height */
 /* wrapper contains all the page (sidebar and content) */
 .wrapper {
@@ -28,30 +30,47 @@
 }
 
 #content {
-    width: calc(100% - 250px);
-    padding: 40px;
-    min-height: 100vh;
-    transition: all 0.3s;
-    position: absolute;
-    top: 0;
-    right: 0;
+  width: calc(100% - 250px);
+  padding: 40px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#content-content {
+  margin-top: 100px;
 }
 
 #content.hidden {
-    width: 100%;
+  width: 100%;
 }
 
-#navbar{
 
+#navbarContainer {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: calc(100% - 250px);
+}
 
+#navbarContainer.hidden {
+  width: 100%;
 }
 
 /* just improving style */
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
 body {
   font-family: 'Poppins', sans-serif;
   background: #fafafa;
+}
+
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 p {
