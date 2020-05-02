@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>Communication entre switch</h1>
+
+  <p>
+    <input id="switch1" type="checkbox" data-toggle="toggle" data-on="En cours" data-off="En Pause" data-onstyle="success" data-offstyle="warning" data-size="sm" checked>
+  </p>
+
+  <p>
+    <input id="switch2" type="checkbox" data-toggle="toggle" data-on="En cours" data-off="En Pause" data-onstyle="success" data-offstyle="warning" data-size="sm">
+  </p>
+
+  <p>
+    <input id="switch3" type="checkbox" data-toggle="toggle" data-on="En cours" data-off="En Pause" data-onstyle="success" data-offstyle="warning" data-size="sm">
+  </p>
+
+  <p>
+    <input type="checkbox" name="test" value="bonjour" id="checkbox">Simple checkbox</input>
+  </p>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+<script type="text/javascript">
+  (function() {
+    $('#switch1').change(function() {
+      if (this.checked) {
+        console.log('switch1 met en on ses trucs')
+        $('#switch2').bootstrapToggle('off');
+        $('#switch3').bootstrapToggle('off');
+      } else {
+        console.log('switch1 met en off ses trucs')
+      }
+    })
+  })();
+
+  (function() {
+    $('#switch2').change(function() {
+      if (this.checked) {
+        console.log('switch2 met en on ses trucs')
+        $('#switch1').bootstrapToggle('off');
+        $('#switch3').bootstrapToggle('off');
+      } else {
+        console.log('switch2 met en off ses trucs')
+      }
+    })
+  })();
+
+  (function() {
+    $('#switch3').change(function() {
+      //State after change
+      if (this.checked) {
+        console.log('switch3 met en on ses trucs')
+        $('#switch1').bootstrapToggle('off');
+        $('#switch2').bootstrapToggle('off');
+      } else {
+        console.log('switch3 met en off ses trucs')
+      }
+    })
+  })();
+
+  document.getElementById('checkbox').addEventListener('change', (event) => {
+    console.log(event.target, 'has changed')
+  });
+</script>
+
+
+</html>

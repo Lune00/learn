@@ -28,8 +28,8 @@
 
 <script>
   document.getElementById("myButton").addEventListener('click', (event) => {
-    console.log('button traite', event.target);
     //Lancer un évenement a la cible en mode 'bubbling'(par defaut en capture)
+    console.log('button traite', event.target);
     document.getElementById("myDiv-target").dispatchEvent(new Event('coucou', {bubbles: true}));
     console.log('button a fini', event.target);
   });
@@ -41,7 +41,6 @@
     //event.stopPropagation();
   }, true);
 
-
   document.getElementById("myDiv-sameLevel").addEventListener('click', (event) => {
     console.log('myDiv-sameLevel', event.target);
   }, true);
@@ -51,7 +50,7 @@
   document.getElementById("myDiv-target").addEventListener('coucou', (event) => {
     console.log('coucou myDiv-target', event.target);
   })
-</script>
 
+</script>
 
 </html>
