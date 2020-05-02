@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Dom</h1>
+  <div id="myDiv-outter">
+    <div id="myDiv-inner">
+      <input id="myButton" type="button" name="button" value="Clique">
+    
+    </div>
+
+    <div id="myDiv-sameLevel">
+      <div id="myDiv-target">
+      </div>
+    </div>
+  </div>
+
+  <p>
+  </p>
+
+</body>
+
+<script>
+  document.getElementById("myButton").addEventListener('click', (event) => {
+    console.log('button traite', event.target);
+    //Lancer un évenement a la cible en mode 'bubbling'(par defaut en capture)
+    document.getElementById("myDiv-target").dispatchEvent(new Event('coucou', {bubbles: true}));
+    console.log('button a fini', event.target);
+  });
+  document.getElementById("myDiv-outter").addEventListener('click', (event) => {
+    console.log('outter', event.target);
+  }, true);
+  document.getElementById("myDiv-inner").addEventListener('click', (event) => {
+    console.log('inner', event.target);
+    //event.stopPropagation();
+  }, true);
+
+
+  document.getElementById("myDiv-sameLevel").addEventListener('click', (event) => {
+    console.log('myDiv-sameLevel', event.target);
+  }, true);
+  document.getElementById("myDiv-sameLevel").addEventListener('coucou', (event) => {
+    console.log('coucou myDiv-sameLevel', event.target);
+  })
+  document.getElementById("myDiv-target").addEventListener('coucou', (event) => {
+    console.log('coucou myDiv-target', event.target);
+  })
+</script>
+
+
+</html>
