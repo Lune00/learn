@@ -1,1 +1,0 @@
-alter user TOTO identified by pizza;

@@ -1,2 +1,0 @@
-update ARTICLES 
-set DESIGNATION=upper(DESIGNATION),REFART=rtrim(REFART);

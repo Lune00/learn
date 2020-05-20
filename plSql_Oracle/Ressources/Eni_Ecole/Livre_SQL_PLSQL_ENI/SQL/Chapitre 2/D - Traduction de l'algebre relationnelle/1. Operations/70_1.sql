@@ -1,1 +1,0 @@
-select nomcli,ville from clients group by nomcli, ville;

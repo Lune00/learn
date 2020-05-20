@@ -1,1 +1,0 @@
-grant select on CLIENTS to public;

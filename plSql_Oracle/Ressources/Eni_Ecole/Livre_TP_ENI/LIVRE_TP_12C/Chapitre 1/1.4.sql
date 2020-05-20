@@ -1,1 +1,0 @@
-alter table membres add constraint uq_membres unique (nom, prenom, telephone);

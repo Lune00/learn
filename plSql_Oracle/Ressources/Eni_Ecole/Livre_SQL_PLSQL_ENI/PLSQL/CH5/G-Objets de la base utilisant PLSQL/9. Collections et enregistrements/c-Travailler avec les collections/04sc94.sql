@@ -1,1 +1,0 @@
-CREATE TYPE Tabstock AS TABLE OF Typestock;

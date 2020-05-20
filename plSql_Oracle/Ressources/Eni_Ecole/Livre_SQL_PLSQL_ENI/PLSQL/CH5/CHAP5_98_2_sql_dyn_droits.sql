@@ -1,7 +1,0 @@
-CREATE OR REPLACE PROCEDURE supprime
-  (type VARCHAR2,
-   nom VARCHAR2) AS
-BEGIN
-  EXECUTE IMMEDIATE 'DROP '||type||' '||nom;
-END;
-/

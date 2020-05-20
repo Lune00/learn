@@ -1,1 +1,0 @@
-execute appliqueXsl('c:\xml','equipe.xml','equipe.xsl','equipe.out','erreurs.txt');

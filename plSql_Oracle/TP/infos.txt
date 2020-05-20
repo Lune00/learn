@@ -1,2 +1,0 @@
-Les TPS sont réalisés avec la base de données créee par le script 'script_TPS_creation_BDD.sql' présent dans le dossier.
-Les sujets des TPS sont ceux du livre support ENI. Les TP commencent à la page 58.

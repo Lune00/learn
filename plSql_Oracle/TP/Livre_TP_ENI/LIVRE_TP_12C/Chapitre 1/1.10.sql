@@ -1,1 +1,0 @@
-create synonym abonnes for membres;

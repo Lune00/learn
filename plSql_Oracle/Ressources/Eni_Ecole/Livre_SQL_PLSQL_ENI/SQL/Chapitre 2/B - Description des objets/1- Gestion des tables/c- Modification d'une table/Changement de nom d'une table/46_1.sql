@@ -1,1 +1,0 @@
-rename ARTICLES to PRODUITS;

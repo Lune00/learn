@@ -1,7 +1,0 @@
-<!ELEMENT equipe (coureur*)>
-<!ATTLIST equipe nom CDATA #REQUIRED>
-<!ATTLIST equipe pays CDATA #REQUIRED>
-<!ELEMENT coureur (#PCDATA)>
-<!ATTLIST coureur numero ID #REQUIRED>
-
-

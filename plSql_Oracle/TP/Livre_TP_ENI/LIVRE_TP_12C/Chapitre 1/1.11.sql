@@ -1,1 +1,0 @@
-rename detailsemprunts to details;
