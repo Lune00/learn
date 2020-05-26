@@ -1,0 +1,302 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Beach Cleanup",
+      "date": "Aug 28 2018",
+      "time": "10:00",
+      "location": "Daytona Beach",
+      "description": "Let's clean up this beach.",
+      "organizer": "Adam Jahr",
+      "category": "sustainability",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "def456",
+          "name": "Gregg Pollack"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Park Cleanup",
+      "date": "Nov 12 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "We're going to clean up this park.",
+      "organizer": "Adam Jahr",
+      "category": "nature",
+      "attendees": [
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pet Adoption Day",
+      "date": "Dec 2 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "Help animals find new homes.",
+      "organizer": "Gregg Pollack",
+      "category": "animal welfare",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 2813,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "sustainability",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "Working?",
+      "description": "",
+      "location": "Here",
+      "date": "2020-05-02T12:13:00.000Z",
+      "time": "19:00",
+      "attendees": []
+    },
+    {
+      "id": 64308,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "azeaze",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 81857,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 64456,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 23391,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 34316,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 14003,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 71436,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 60071,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "",
+      "description": "azeaz",
+      "location": "azeaze",
+      "date": "2020-05-01T12:19:00.000Z",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 56047,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "Walking the dog",
+      "description": "Want to walk the dog with me?",
+      "location": "At my place",
+      "date": "2020-05-07T12:21:00.000Z",
+      "time": "15:00",
+      "attendees": []
+    },
+    {
+      "id": 88109,
+      "user": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Paul Schuhmacher"
+      },
+      "title": "AAAA",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 10542,
+      "title": "Beach Barbecue",
+      "date": "Aug 28 2011",
+      "time": "10:00",
+      "location": "Levar Beach",
+      "description": "Let's party !",
+      "organizer": "Adam Jahr",
+      "category": "sustainability",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "def456",
+          "name": "Gregg Pollack"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    }
+  ]
+}
