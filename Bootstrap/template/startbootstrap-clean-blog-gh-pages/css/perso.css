@@ -5,3 +5,31 @@
 #mainNav .navbar-nav > li.nav-item > a:hover {
     color: #20FF3E;
 }
+
+.encart{
+  background-color: #C6C6C6;
+  border-radius: 10px;
+}
+
+blockquote {
+    margin: 0;
+}
+
+blockquote {
+    padding: 12px;
+    background: #eee;
+    border-radius: 5px;
+    margin:5px;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+.snippet-code{
+  margin-bottom:10px;
+}
