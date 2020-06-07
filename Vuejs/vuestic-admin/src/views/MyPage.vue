@@ -3,17 +3,17 @@
 <template>
 <div id="">
   <h2>Ma page pour tester 2 l'UI</h2>
-  <ButonModalCustom></ButonModalCustom>
+  <ButtonModalCustom></ButtonModalCustom>
 </div>
 </template>
 <script>
 
-import ButonModalCustom from './ButonModalCustom.vue';
+import ButtonModalCustom from './ButtonModalCustom.vue';
 
 export default {
   name: "MyPage",
   components: {
-    ButonModalCustom
+    ButtonModalCustom
   },
   data: () => ({
   }),
