@@ -12,7 +12,7 @@ const getLastCommitHash = () => {
   return hash.slice(0, 6)
 }
 
-const lintOnSave = false
+const lintOnSave = true
 
 module.exports = {
   lintOnSave,
