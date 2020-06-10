@@ -4,16 +4,19 @@
 <div id="">
   <h2>Ma page pour tester 2 l'UI</h2>
   <ButtonModalCustom></ButtonModalCustom>
+  <BaseSelect></BaseSelect>
 </div>
+
 </template>
 <script>
 
 import ButtonModalCustom from './ButtonModalCustom.vue';
+import BaseSelect from './BaseSelect.vue';
 
 export default {
   name: "MyPage",
   components: {
-    ButtonModalCustom
+    ButtonModalCustom, BaseSelect
   },
   data: () => ({
   }),

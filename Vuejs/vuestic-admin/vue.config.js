@@ -12,7 +12,7 @@ const getLastCommitHash = () => {
   return hash.slice(0, 6)
 }
 
-const lintOnSave = true
+const lintOnSave = false
 
 module.exports = {
   lintOnSave,
@@ -71,4 +71,7 @@ module.exports = {
       importWorkboxFrom: 'local',
     },
   },
+  chainWebpack: config => {
+        config.module.rules.delete('eslint');
+    }
 }
