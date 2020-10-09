@@ -1,0 +1,3 @@
+<h2 class="dif3">Question 4</h2>
+<section class="enonce">Écrire une fonction calculant les <b>n</b> premières lignes du triangle de Pascal (<b>n</b> étant passé en paramètre). Il s'agit de la suite suivante :<pre>1<br>1  1<br>1  2  1<br>1  3  3  1<br>1  4  6  4  1<br>1  5 10 10  5  1<br>...</pre>La première colonne et la diagonale valent toujours 1 et chaque autre élément est égal à la somme de celui qui est au-dessus avec celui qui se trouve sur au-dessus à gauche (exemples 3=2+1 ou 6=3+3). la fonction retourne un tableau à deux dimensions contenant ces valeurs.</section>
+<section class="enonce">Écrire une seconde fonction affichant ce triangle de Pascal.</section>

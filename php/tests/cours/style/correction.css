@@ -1,0 +1,74 @@
+body {
+    counter-reset: section;
+}
+
+div.correction {
+    background-color: #60cd72;
+    padding: 5px 15px;
+    color: black;
+}
+
+.corrige {
+    display: none;
+}
+
+div.corrige > code {
+    display: block;
+    padding: 10px;
+    background-color: white;
+}
+
+input[type=checkbox]:checked + .correction .corrige {
+    display: block;
+}
+
+input[type=checkbox] + .correction label {
+    background-image: url(bas.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type=checkbox]:checked + .correction label {
+    background-image: url(haut.png);
+}
+
+.cbxCorr[type=checkbox] {
+    display: none;
+}
+
+img {
+    border: 1px solid black;
+}
+
+div img {
+    border: none;
+    margin: auto;
+    display: block;
+}
+
+.enonce {
+    color: white;
+    font-style: italic;
+    padding: 10px;
+    text-align: justify;
+}
+
+.dif1 {
+    background-image: url('brain.png');
+    background-repeat: no-repeat;
+    background-position: right 10px top;
+}
+
+.dif2 {
+    background-image: url('brain.png'), url('brain.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 10px top, right 60px top;
+}
+
+.dif3 {
+    background-image: url('brain.png'), url('brain.png'), url('brain.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: right 10px top, right 60px top, right 110px top;
+}

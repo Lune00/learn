@@ -1,0 +1,2 @@
+    <h2 class="dif3">Question 4</h2>
+<section class="enonce">Une fois connecté avec l'exercice précédent, le propriétaire peut enregistrer un nouveau véhicule.<br>Créer un formulaire permettant l’insertion simultanée des données dans les tables <code>voitures</code>, <code>cartesgrises</code> et <code>modeles</code> si nécessaire. Il doit contenir les zones de saisie pour les différentes informations.<br>La liste des modèles d’une marque créée dynamiquement à partir de la saisie de la marque.</section>

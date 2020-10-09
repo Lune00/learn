@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>30</y>
+      <w>440</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+ModeleDeDonnees
+--
+- cnx : PDO
+--
+# executerRequete(sql : string, [parametres : array]) : PDOStatement
+- getConnexion() : PDO</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>220</y>
+      <w>350</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Restaurant
+--
+
+--
++ getRestaurants() : Traversable
++ getRestaurant(idRestaurant : int) : array</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>120</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;60.0;10.0;60.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>220</y>
+      <w>350</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Avis
+--
+
+--
++ getAvis(idRestaurant : int) : Traversable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>120</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;190.0;60.0;190.0;100.0</additional_attributes>
+  </element>
+</diagram>

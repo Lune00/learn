@@ -1,0 +1,148 @@
+body {
+    background : rgb(52, 54, 66) ! important;
+    padding-bottom: 120px;
+    margin: 0;
+    max-width: 1003px;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+body>a, body>p {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    background: rgb(149, 158, 158);
+}
+
+h2 {
+    background-color: rgb(52, 136, 153);
+}
+
+h3 {
+    background-color: rgb(72, 55, 103);
+}
+
+h1, h2, h3, h4 {
+    padding: 5px;
+    color: white;
+}
+
+div:not(.corrige) {
+    background-color: white;
+    color: black;
+    padding: 10px
+}
+
+body > ol > li, .nom {
+    color: white;
+}
+
+body:after {
+    content: url(logo-eni.png);
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+body > code:before {
+    content: url(php.png);
+    float: right;
+    margin: 5px -40px 0 0;
+}
+
+.execution + div:before {
+    content: url(web.png);
+    float: right;
+    margin: 5px -40px 0 5px;
+}
+
+.commentaires + div:before {
+    content: url(com.png);
+    float: right;
+    margin: 5px -40px 0 5px;
+}
+
+.execution + div,
+.commentaires + div,
+body > code {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    hyphens: auto;
+    min-height: 80px;
+    text-align: justify;
+}
+
+p code, h2 code, h3 code, h3 code, h4 code, h5 code {
+    display: initial;
+    padding: initial;
+    background-color: initial;
+}
+
+p {
+    padding: 0 10px 0 10px;
+}
+
+label, input, select {
+    display: inline-block;
+    width: 250px;
+    margin: 5px;
+}
+table {
+    background-color: white;
+}
+
+table, td, th {
+    color: black;
+    border: 1px solid black;
+    border-collapse:collapse;
+    padding: 5px;
+}
+
+.red {
+    color: red;
+}
+
+.executer,.precedent {
+    display: inline-block;
+    background-color: rgb(52, 136, 153);
+    height: 24px;
+    vertical-align: middle;
+    margin: 5px 0 5px 0;
+    font-size: 20px;
+}
+
+.executer {
+    padding-left: 5px;
+}
+
+.precedent {
+    padding-right: 5px;
+}
+
+.executer:after, .precedent:before {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgb(52, 54, 66);
+}
+
+.executer:after {
+    content: url('executer.png');;
+}
+
+.precedent:before {
+    content: url('precedent.png');;
+}

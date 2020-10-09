@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>0</y>
+      <w>410</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Vue
+--
+-action
+-titre
+--
++__construct(action : string)
+-insererDonnees(cheminFichier : string, donnees : array) : string
++afficher(donnees : array)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>160</x>
+      <y>200</y>
+      <w>260</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>VueAccueil
+--
+&lt;h1&gt;Vos restaurants préférés&lt;/h1&gt;
+&lt;?php
+foreach ($restaurants as $r) :
+    ?&gt;
+    &lt;a href="index.php?action=restaurant&amp;idRestaurant=&lt;?= $r['idRestaurant'] ?&gt;"&gt;
+        &lt;h2&gt;&lt;?= $r['nom'] ?&gt;&lt;/h2&gt;&lt;/a&gt;
+    &lt;address&gt;&lt;?= $r['ville'] ?&gt;&lt;/address&gt;
+    &lt;?= $r['description'] ?&gt;
+    &lt;hr&gt;
+    &lt;?php
+endforeach;
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>200</y>
+      <w>260</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>halign=left
+'restaurants' =&gt; 
+array (size=2)
+  0 =&gt; 
+    array (size=14)
+      'idRestaurant' =&gt; string '1' (length=1)
+      'nom' =&gt; string 'Le Globe' (length=8)
+      'adresse' =&gt; string '9 Boulevard Amiral de Kerguélen' (length=32)
+      'cp' =&gt; string '29500' (length=5)
+      'ville' =&gt; string 'Quimper' (length=7)
+      'telephone' =&gt; string '298950910' (length=9)
+      'description' =&gt; string '&lt;p&gt;Faites votre tour du monde culinaire !&lt;/p&gt;&lt;p&gt;C'est vos papilles que vous emmènerez en voyage au restaurant Le Globe ! Faites les patienter avec des cocktails originaux hauts en couleurs et des petits toasts de Tapenade que Laurent, le directeur du restaurant le Globe vous fera un plaisir de vous apporter. Côté cuisine, évadez vous avec le chef du restaurant Le Globe Marc et une cuisine « À sa façon », suivez le guide ! Il vous emmène au Japon, en Thaïlande, en Grèce, aux Antilles et au Moyen O'... (length=1307)
+  1 =&gt; 
+    array (size=14)
+      'idRestaurant' =&gt; string '2' (length=1)
+      'nom' =&gt; string 'Le Clémenceau' (length=14)
+      'adresse' =&gt; string '40 rue George Clémenceau' (length=25)
+      'cp' =&gt; string '85000' (length=5)
+      'ville' =&gt; string 'La Roche-sur-Yon' (length=16)
+      'telephone' =&gt; string '251371020' (length=9)
+      'description' =&gt; string '&lt;p&gt;Face au grand parking de la Place de la Vendée, ouvert de 9h à minuit chaque jour de la semaine, le Clemenceau vous propose un service en continu. Dès l'ouverture, venez prendre votre petit-déjeuner ; vous pourrez ensuite déguster à toute heure de la journée des plats « maison », élaborés à partir de produits locaux frais traduisant tout le savoir-faire de nos cuisiniers.&lt;/p&gt;&lt;p&gt;Lieu de pause incontournable depuis plus de trente ans, Le Clemenceau vous offre de multiples choix de détente au s'... (length=977)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>360</x>
+      <y>440</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>insererDonnees()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>410</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>160</x>
+      <y>510</y>
+      <w>260</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>gabarit
+--
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;?= $titre ?&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;nav&gt;
+            &lt;a href="/index.php"&gt;Restaurants préférés&lt;/a&gt;
+            &lt;a href="mailto:contact@restaurants-preferes.fr"&gt;Contact&lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;?= $contenu ?&gt;
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>510</y>
+      <w>260</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>halign=left
+'contenu' =&gt; '&lt;h1&gt;Vos restaurants préférés&lt;/h1&gt;
+                     &lt;h2&gt;&lt;a href="index.php?action=restaurant&amp;idRestaurant=1"&gt;Le Globe&lt;/a&gt;&lt;/h2&gt;
+                     &lt;address&gt;Quimper&lt;/address&gt;
+                     &lt;p&gt;Faites votre tour du monde culinaire !&lt;/p&gt;&lt;p&gt;C'est vos papilles que vous emmènerez en voyage au restaurant Le Globe ! Faites les patienter avec des cocktails originaux hauts en couleurs et des petits toasts de Tapenade que Laurent, le directeur du restaurant le Globe vous fera un plaisir de vous apporter. Côté cuisine, évadez vous avec le chef du restaurant Le Globe Marc et une cuisine « À sa façon », suivez le guide ! Il vous emmène au Japon, en Thaïlande, en Grèce, aux Antilles et au Moyen Orient !&lt;/p&gt;&lt;p&gt;En entrée, le restaurant Le Globe vous propose de déguster le Croustillant au tartare de boeuf Thaï, mousse de gingembre et soja ou le Foie Gras Maison et son chutney de Pommes et mangues épicées... Pour un dépaysement total côté plat, goûtez le Wok de Poulet Thaï, la Poêlée de Gambas à l'Orientale, vierge de tomate cerise, à la Marjolaine ou l'Emincé de Poulet à la Mexicaine, Guacamole et Yaourt épicée. En dessert, dégustez le Moelleux aux agrumes, coeur de fruits frais et coulis framboise, le Sablé citron vert aux fraises et bâtonnets meringués ou le Fondant chocolat avec son coeur coulant au caramel.&lt;/p&gt;&lt;p&gt;Au restaurant Le Globe, vous pourrez vous retrouvez entre amis pour déguster cette cuisine du monde. Vous ne serez pas déçu du voyage !&lt;/p&gt;
+                     &lt;hr&gt;
+                     &lt;h2&gt;&lt;a href="index.php?action=restaurant&amp;idRestaurant=2"&gt;Le Clémenceau&lt;/a&gt;&lt;/h2&gt;
+                     &lt;address&gt;La Roche-sur-Yon&lt;/address&gt;
+                     &lt;p&gt;Face au grand parking de la Place de la Vendée, ouvert de 9h à minuit chaque jour de la semaine, le Clemenceau vous propose un service en continu. Dès l'ouverture, venez prendre votre petit-déjeuner ; vous pourrez ensuite déguster à toute heure de la journée des plats « maison », élaborés à partir de produits locaux frais traduisant tout le savoir-faire de nos cuisiniers.&lt;/p&gt;&lt;p&gt;Lieu de pause incontournable depuis plus de trente ans, Le Clemenceau vous offre de multiples choix de détente au sein de ses différents espaces entièrement rénovés, chaleureux, où nos équipes mettent tout en oeuvre pour que vous passiez un moment privilégié. Venez découvrir la brasserie à la parisienne, assurant convivialité et rapidité, les salons privatifs à l'étage, pour le plaisir ou le travail dans un cadre plus feutré, la véranda orientée plein sud et climatisée, plus moderne et, quand il fait beau, profitez de notre magnifique terrasse extérieure.
+                     &lt;hr&gt;'
+'titre' =&gt; 'Vos restaurants préférés'</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>720</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>720</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>360</x>
+      <y>750</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>insererDonnees()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>780</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>390</x>
+      <y>810</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>flux HTML
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>410</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>470</y>
+      <w>120</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;110.0;30.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

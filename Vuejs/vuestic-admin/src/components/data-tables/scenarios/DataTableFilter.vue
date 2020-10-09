@@ -43,6 +43,9 @@
         <va-button v-if="props.rowData.hasReport" small color="danger" class="ma-0">
           {{ $t('tables.report') }}
         </va-button>
+        <va-button v-if="props.rowData.hasReport" small color="danger" class="ma-0">
+          {{ $t('tables.report') }}
+        </va-button>
       </template>
     </va-data-table>
   </va-card>

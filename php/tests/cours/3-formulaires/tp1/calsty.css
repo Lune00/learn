@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    border: none;
+}
+
+td, th {
+    border: none;
+    border-right: 1px black solid;
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+}
+td:first-child, th:first-child {
+    border-left: 1px black solid;
+}
+
+th {
+    background-color: #DDDDDD;
+}
+
+td {
+    text-align: right;
+}
+
+td:nth-child(6), td:nth-child(7) {
+    background-color: #9D9;
+}
+
+td:empty {
+    background-color: inherit;
+}
