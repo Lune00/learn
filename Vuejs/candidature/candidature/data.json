@@ -1,0 +1,343 @@
+[
+  {
+    "date": "2019-01-01",
+    "rates": {
+      "Guest Suite": "7.2",
+      "Trip Advisor": "7.6",
+      "Page Jaunes": "7.0",
+      "Yelp": "7.3",
+      "Booking.com": "9.9",
+      "Zoover": "8.6"
+    }
+  },
+  {
+    "date": "2019-01-02",
+    "rates": {
+      "Guest Suite": "7.8",
+      "Trip Advisor": "8.7",
+      "Page Jaunes": "8.1",
+      "Yelp": "9.7",
+      "Booking.com": "7.3",
+      "Zoover": "7.8"
+    }
+  },
+  {
+    "date": "2019-01-03",
+    "rates": {
+      "Guest Suite": "7.1",
+      "Trip Advisor": "9.1",
+      "Page Jaunes": "7.4",
+      "Yelp": "9.5",
+      "Booking.com": "8.4",
+      "Zoover": "7.9"
+    }
+  },
+  {
+    "date": "2019-01-04",
+    "rates": {
+      "Guest Suite": "9.6",
+      "Trip Advisor": "7.2",
+      "Page Jaunes": "8.7",
+      "Yelp": "9.5",
+      "Booking.com": "8.1",
+      "Zoover": "9.3"
+    }
+  },
+  {
+    "date": "2019-01-05",
+    "rates": {
+      "Guest Suite": "8.4",
+      "Trip Advisor": "7.3",
+      "Page Jaunes": "7.4",
+      "Yelp": "8.1",
+      "Booking.com": "7.0",
+      "Zoover": "8.8"
+    }
+  },
+  {
+    "date": "2019-01-06",
+    "rates": {
+      "Guest Suite": "8.5",
+      "Trip Advisor": "8.2",
+      "Page Jaunes": "9.9",
+      "Yelp": "8.5",
+      "Booking.com": "8.1",
+      "Zoover": "7.2"
+    }
+  },
+  {
+    "date": "2019-01-07",
+    "rates": {
+      "Guest Suite": "9.5",
+      "Trip Advisor": "9.8",
+      "Page Jaunes": "9.5",
+      "Yelp": "7.1",
+      "Booking.com": "8.1",
+      "Zoover": "8.9"
+    }
+  },
+  {
+    "date": "2019-01-08",
+    "rates": {
+      "Guest Suite": "9.1",
+      "Trip Advisor": "8.1",
+      "Page Jaunes": "7.8",
+      "Yelp": "8.1",
+      "Booking.com": "8.7",
+      "Zoover": "9.7"
+    }
+  },
+  {
+    "date": "2019-01-09",
+    "rates": {
+      "Guest Suite": "7.7",
+      "Trip Advisor": "9.4",
+      "Page Jaunes": "8.1",
+      "Yelp": "9.3",
+      "Booking.com": "8.8",
+      "Zoover": "8.0"
+    }
+  },
+  {
+    "date": "2019-01-10",
+    "rates": {
+      "Guest Suite": "9.3",
+      "Trip Advisor": "9.8",
+      "Page Jaunes": "7.9",
+      "Yelp": "8.0",
+      "Booking.com": "9.8",
+      "Zoover": "9.5"
+    }
+  },
+  {
+    "date": "2019-01-11",
+    "rates": {
+      "Guest Suite": "8.2",
+      "Trip Advisor": "7.9",
+      "Page Jaunes": "9.3",
+      "Yelp": "7.2",
+      "Booking.com": "8.0",
+      "Zoover": "8.5"
+    }
+  },
+  {
+    "date": "2019-01-12",
+    "rates": {
+      "Guest Suite": "9.9",
+      "Trip Advisor": "8.2",
+      "Page Jaunes": "9.8",
+      "Yelp": "8.4",
+      "Booking.com": "9.8",
+      "Zoover": "8.4"
+    }
+  },
+  {
+    "date": "2019-01-13",
+    "rates": {
+      "Guest Suite": "7.6",
+      "Trip Advisor": "7.3",
+      "Page Jaunes": "9.5",
+      "Yelp": "8.7",
+      "Booking.com": "8.7",
+      "Zoover": "8.5"
+    }
+  },
+  {
+    "date": "2019-01-14",
+    "rates": {
+      "Guest Suite": "8.4",
+      "Trip Advisor": "7.3",
+      "Page Jaunes": "8.2",
+      "Yelp": "7.4",
+      "Booking.com": "8.2",
+      "Zoover": "8.1"
+    }
+  },
+  {
+    "date": "2019-01-15",
+    "rates": {
+      "Guest Suite": "10.0",
+      "Trip Advisor": "7.2",
+      "Page Jaunes": "9.6",
+      "Yelp": "9.3",
+      "Booking.com": "8.1",
+      "Zoover": "7.3"
+    }
+  },
+  {
+    "date": "2019-01-16",
+    "rates": {
+      "Guest Suite": "8.4",
+      "Trip Advisor": "10.0",
+      "Page Jaunes": "9.6",
+      "Yelp": "8.7",
+      "Booking.com": "8.6",
+      "Zoover": "8.7"
+    }
+  },
+  {
+    "date": "2019-01-17",
+    "rates": {
+      "Guest Suite": "7.2",
+      "Trip Advisor": "7.8",
+      "Page Jaunes": "8.5",
+      "Yelp": "8.2",
+      "Booking.com": "9.3",
+      "Zoover": "9.4"
+    }
+  },
+  {
+    "date": "2019-01-18",
+    "rates": {
+      "Guest Suite": "8.0",
+      "Trip Advisor": "7.8",
+      "Page Jaunes": "7.1",
+      "Yelp": "9.0",
+      "Booking.com": "8.8",
+      "Zoover": "7.8"
+    }
+  },
+  {
+    "date": "2019-01-19",
+    "rates": {
+      "Guest Suite": "8.1",
+      "Trip Advisor": "8.9",
+      "Page Jaunes": "9.7",
+      "Yelp": "7.2",
+      "Booking.com": "8.9",
+      "Zoover": "7.6"
+    }
+  },
+  {
+    "date": "2019-01-20",
+    "rates": {
+      "Guest Suite": "9.5",
+      "Trip Advisor": "7.8",
+      "Page Jaunes": "9.7",
+      "Yelp": "9.5",
+      "Booking.com": "7.6",
+      "Zoover": "9.1"
+    }
+  },
+  {
+    "date": "2019-01-21",
+    "rates": {
+      "Guest Suite": "7.6",
+      "Trip Advisor": "9.6",
+      "Page Jaunes": "9.6",
+      "Yelp": "10.0",
+      "Booking.com": "9.3",
+      "Zoover": "8.5"
+    }
+  },
+  {
+    "date": "2019-01-22",
+    "rates": {
+      "Guest Suite": "9.6",
+      "Trip Advisor": "9.8",
+      "Page Jaunes": "9.6",
+      "Yelp": "7.3",
+      "Booking.com": "8.6",
+      "Zoover": "7.3"
+    }
+  },
+  {
+    "date": "2019-01-23",
+    "rates": {
+      "Guest Suite": "8.3",
+      "Trip Advisor": "7.5",
+      "Page Jaunes": "9.0",
+      "Yelp": "8.6",
+      "Booking.com": "8.2",
+      "Zoover": "7.3"
+    }
+  },
+  {
+    "date": "2019-01-24",
+    "rates": {
+      "Guest Suite": "9.6",
+      "Trip Advisor": "8.5",
+      "Page Jaunes": "7.5",
+      "Yelp": "9.7",
+      "Booking.com": "8.9",
+      "Zoover": "7.4"
+    }
+  },
+  {
+    "date": "2019-01-25",
+    "rates": {
+      "Guest Suite": "9.2",
+      "Trip Advisor": "8.7",
+      "Page Jaunes": "9.6",
+      "Yelp": "8.0",
+      "Booking.com": "9.0",
+      "Zoover": "9.5"
+    }
+  },
+  {
+    "date": "2019-01-26",
+    "rates": {
+      "Guest Suite": "9.1",
+      "Trip Advisor": "10.0",
+      "Page Jaunes": "9.4",
+      "Yelp": "9.6",
+      "Booking.com": "7.3",
+      "Zoover": "9.6"
+    }
+  },
+  {
+    "date": "2019-01-27",
+    "rates": {
+      "Guest Suite": "9.8",
+      "Trip Advisor": "7.8",
+      "Page Jaunes": "7.9",
+      "Yelp": "9.1",
+      "Booking.com": "9.1",
+      "Zoover": "8.8"
+    }
+  },
+  {
+    "date": "2019-01-28",
+    "rates": {
+      "Guest Suite": "9.4",
+      "Trip Advisor": "7.4",
+      "Page Jaunes": "9.2",
+      "Yelp": "7.2",
+      "Booking.com": "8.9",
+      "Zoover": "8.6"
+    }
+  },
+  {
+    "date": "2019-01-29",
+    "rates": {
+      "Guest Suite": "8.6",
+      "Trip Advisor": "9.3",
+      "Page Jaunes": "8.8",
+      "Yelp": "9.7",
+      "Booking.com": "9.5",
+      "Zoover": "9.1"
+    }
+  },
+  {
+    "date": "2019-01-30",
+    "rates": {
+      "Guest Suite": "8.6",
+      "Trip Advisor": "8.2",
+      "Page Jaunes": "8.0",
+      "Yelp": "9.5",
+      "Booking.com": "8.9",
+      "Zoover": "9.6"
+    }
+  },
+  {
+    "date": "2019-01-31",
+    "rates": {
+      "Guest Suite": "7.1",
+      "Trip Advisor": "8.1",
+      "Page Jaunes": "7.3",
+      "Yelp": "9.2",
+      "Booking.com": "7.8",
+      "Zoover": "8.6"
+    }
+  }
+]
