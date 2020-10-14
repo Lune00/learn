@@ -20,7 +20,7 @@
 
     <div class="row">
       <BrandCard
-        v-for="item in averagedScoresByBrand"
+        v-for="item in averagedScoreByBrandDesc"
         v-bind:title="item.name"
         v-bind:score="item.averagedScore"
         :key="item.name"
@@ -97,7 +97,7 @@ export default {
   },
   computed: {
     averagedScoreByBrandDesc() {
-      const tmp = [...this.averagedScoreByBrand];
+      const tmp = [...this.averagedScoresByBrand];
       return tmp.sort((a, b) => b.averagedScore - a.averagedScore);
     },
   },
