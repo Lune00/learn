@@ -18,7 +18,7 @@
     ></MyChart>
 
     <BrandCard
-      v-for="item in averagedScoreByBrand"
+      v-for="item in averagedScoreByBrandDesc"
       v-bind:title="item.name"
       v-bind:score="item.averagedScore"
       :key="item.name"
@@ -41,7 +41,7 @@ export default {
       selectedBrandData: null,
       brandNames: null,
       averagedScoreByBrand: null,
-      chartOptions: null // TODO : should be removed (passe directement le retour d'une fonction en prop?)
+      chartOptions: null, // TODO : should be removed (passe directement le retour d'une fonction en prop?)
     };
   },
   created() {
@@ -58,7 +58,12 @@ export default {
       this.selectedBrandData = DataService.getBrandData(this.selectedBrand);
     },
   },
-
+  computed: {
+    averagedScoreByBrandDesc() {
+      const tmp = [...this.averagedScoreByBrand];
+      return tmp.sort((a, b) => b.averagedScore - a.averagedScore);
+    },
+  },
 };
 </script>
 
