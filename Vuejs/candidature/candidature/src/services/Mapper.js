@@ -1,6 +1,7 @@
 export default {
 
-     //TO REFACTOR
+     //TODO : REFACTOR (not really easy to read)
+     //Reogranise row data to have a time-series (score) by brand name
     dataByBrand(rawData) {
 
         if (!rawData)

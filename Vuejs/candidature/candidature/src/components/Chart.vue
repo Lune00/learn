@@ -1,19 +1,14 @@
 <script>
-import { Line } from "vue-chartjs";
-
-export default {
+import { Line, mixins } from "vue-chartjs";
+const {reactiveProp} = mixins
+export default  {
   extends: Line,
+  mixins: [reactiveProp],
   name: "MyChart",
   data() {
     return {};
   },
   props: {
-    brandData: {
-      type: Array, //TODO : change to an object directly processable by vue-chartjs
-      default() {
-        return [];
-      },
-    },
     options: {
       type: Object,
       required: true,
@@ -21,26 +16,10 @@ export default {
     },
   },
   mounted() {
-    console.log("here");
-    this.renderChart(this.dataChart, this.options);
+    this.renderChart(this.chartData, this.options);
   },
   computed: {
-    dataChart() {
-      const dataChart = {
-        labels: this.brandData.map((el) => el.date),
-        datasets: [
-          {
-            label: "Mes données",
-            backgroundColor: "#f87979",
-            pointBackGroundColor: "white",
-            borderWidth: 2,
-            data: this.brandData.map((el) => el.score),
-          },
-        ],
-      };
-      console.log(dataChart);
-      return dataChart;
-    },
+ 
   },
 };
 </script>

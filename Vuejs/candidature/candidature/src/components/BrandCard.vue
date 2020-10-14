@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h2>{{ title }}</h2>
-    <div>{{ roundedAveragedScore }}</div>
+  <div class="card">
+    <div class="card-body">
+      <h3>{{ roundedAveragedScore }}</h3>
+      <div>{{ title }}</div>
+    </div>
   </div>
 </template>
 
