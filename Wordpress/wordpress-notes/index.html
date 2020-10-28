@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang='fr'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>WordPress Notes</h1>
+
+
+    <h2>Loop</h2>
+
+    <h3>Global</h3>
+    <pre>
+<code>
+&lt;?php while (have_posts()) :the_post(); ?&gt;
+//...
+&lt;?php endwhile; ?&gt;
+</code>
+    </pre>
+
+    <h3>Custom querry</h3>
+    <pre>
+        <code>
+&lt;?php while ($myQuerry->have_posts()) : $myQuerry->the_post(); ?&gt;
+//...
+&lt;?php wp_reset_postdata(); endwhile; ?&gt;
+        </code>
+
+    </pre>
+
+    <h2>Thème</h2>
+
+    <p>Mettre un fichier <i>style.css</i> à la racine du thème avec ce commentaire pour renseigner les meta données du
+        theme :</p>
+    <pre>
+            <code>
+/*
+Theme Name: Fictional University
+Author: Paul Schuhmacher
+Version: 1.0
+*/             
+            </code>
+    </pre>
+
+    <h2>PHP rappels</h2>
+    <p><code>foreach($array as $key=>$value){}</code></p>
+    <p><code>foreach($array as $element){}</code></p>
+
+
+
+    <h2>Hierarchy</h2>
+    <code>index.php</code> est le moteur par défaut de toutes les pages (url) requetées.
+    <h2>Built-in Functions</h2>
+
+    <h3>Sur le nom des fonctions</h3>
+    <p>Toutes les fonctions qui commencent par <code>the_</code> font un appel à <code>echo</code> (ex : <code>the_title()), elles ont une fonction correspondante qui renvoie la valeur commençant par <code>get_</code> (ex: <code>get_the_title())</code></code></p>
+    <h3>Fonctions utiles</h3>
+    <ul>
+        <li><a class="function-name" href="https://developer.wordpress.org/reference/functions/bloginfo/">bloginfo()</a>
+            :
+
+            <span class="function-definition">renvoie le titre du site</span>
+        </li>
+        <li><a href="">the_post()</a></li>
+        <li><a href="">the_title()</a></li>
+        <li><a href="">the_content()</a></li>
+        <li><a href="">the_permalink()</a></li>
+    </ul>
+</body>
+
+</html>
