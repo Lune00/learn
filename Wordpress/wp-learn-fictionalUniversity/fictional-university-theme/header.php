@@ -25,9 +25,9 @@
                         <!-- TODO :take care of being on a children page of a page entry in the menu (menu entry should be also tagged with 'current-menu-item' class) when we're on children page -->
                         <li <?php if (is_page('about-us')) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
                         <li><a href="#">Programs</a></li>
-                        <li><a href="#">Events</a></li>
+                        <li <?php if (get_post_type() == 'event' OR is_page('past-events')) echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('event'); ?>">Events</a></li>
                         <li><a href="#">Campuses</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="<?php echo get_post_type_archive_link('post'); ?>">Blog</a></li>
                     </ul>
                 </nav>
                 <div class="site-header__util">
