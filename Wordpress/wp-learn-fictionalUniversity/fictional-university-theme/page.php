@@ -3,16 +3,10 @@ while (have_posts()) {
   the_post();
 ?>
 
-
-  <div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-    <div class="page-banner__content container container--narrow">
-      <h1 class="page-banner__title"><?php echo the_title() ?></h1>
-      <div class="page-banner__intro">
-        <p>TODO : REPLACE ME LATER</p>
-      </div>
-    </div>
-  </div>
+  <?php pageBanner(array(
+    'subtitle' => 'My Subtitle',
+    'title' => 'My Title'
+  )); ?>
 
   <div class="container container--narrow page-section">
 
@@ -33,7 +27,7 @@ while (have_posts()) {
     ));
     $isAParent = !empty($childrenPages);
 
-    if ($parentId or $isAParent) : ?> 
+    if ($parentId or $isAParent) : ?>
       <div class="page-links">
         <h2 class="page-links__title"><a href="<?php echo get_the_permalink($parentId) ?>"><?php echo get_the_title($parentId) ?></a></h2>
         <ul class="min-list">
