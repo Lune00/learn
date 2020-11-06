@@ -2,39 +2,41 @@
 
 
 //Default page banner : si rien n'est donné
-function pageBanner($args = NULL){
+function pageBanner($args = NULL)
+{
 
-    if(!$args['title']){
+    if (!$args['title']) {
         $args['title'] = get_the_title(); // post title
     }
 
-    if(!$args['subtitle']){
+    if (!$args['subtitle']) {
         $args['subtitle'] = get_field('page_banner_subtitle'); //post subtitle
     }
 
-    if(!$args['photo']){
-        if(get_field('page_banner_image')){
+    if (!$args['photo'] AND !is_archive() AND !is_home()) {
+        if (get_field('page_banner_image')) {
             $args['photo'] = get_field('page_banner_image')['sizes']['pageBanner']; //post image
-        }else{
+        } else {
 
             $args['photo'] = get_theme_file_uri('/images/ocean.jpg'); //defaut image
         }
     }
 
-    ?>
-<div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php
+?>
 
-    echo $args['photo'];
-    ?>);"></div>
-    <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"><?php echo $args['title']?></h1>
-        <div class="page-banner__intro">
-          <?php echo  $args['subtitle'] ?>
+    <div class="page-banner">
+        <div class="page-banner__bg-image" style="background-image: url(<?php
+
+                                                                        echo $args['photo'];
+                                                                        ?>);"></div>
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title"><?php echo $args['title'] ?></h1>
+            <div class="page-banner__intro">
+                <?php echo  $args['subtitle'] ?>
+            </div>
         </div>
     </div>
-</div>
-    <?
+<?php
 }
 
 
@@ -55,8 +57,8 @@ function university_files()
         //JS & CSS are loaded from a localhost webserver (running with node with : npm run devFast)
         wp_enqueue_script('main-univeristy-javascript', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
     } else {
-        wp_enqueue_script('our-vendorrs-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
-        wp_enqueue_script('main-university.js', get_theme_file_uri('/bundled-assets/scripts.bc49dbb23afb98cfc0f7.js'), NULL, '1.0', true);
+        wp_enqueue_script('our-vendorrs-js', get_theme_file_uri('/bundled-assets/vendors~scripts.64e2c292d6fcbaf95af9.js'), NULL, '1.0', true);
+        wp_enqueue_script('main-university.js', get_theme_file_uri('/bundled-assets/scripts.45ea6ed2b68bad1e9efb.js'), NULL, '1.0', true);
         wp_enqueue_style('our-main-style', get_theme_file_uri('bundled-assets/styles.bc49dbb23afb98cfc0f7.css'));
     }
 }
@@ -111,4 +113,69 @@ function university_adjust_queries($query)
 }
 
 
+
+//Creation d'un form avec un select multiple avec des données de type program personalisé
 add_action('pre_get_posts', 'university_adjust_queries');
+
+
+//Forms
+
+add_filter('gform_pre_render_1', 'populate_form_with_programs_availables');
+function populate_form_with_programs_availables($form)
+{
+    //Id du form pour ajouter un event (voir dans le dashboard)
+    $programChoicesFieldId = 19;
+
+    foreach ($form['fields'] as $field) {
+
+        if ($field->id == $programChoicesFieldId) {
+
+            // print_r($field);
+            $programs = new WP_Query(array(
+                'posts_per_page' => -1,
+                'post_type' => 'program',
+                'orderby' => 'title',
+                'order' => 'ASC'
+            ));
+
+            $choices = array();
+
+            foreach ($programs->posts as $post) {
+                $choices[] = array(
+                    'text' => $post->post_title,
+                    'value' => $post->ID,
+                    'isSelected' => false
+                );
+            }
+        }
+    }
+
+    $field->choices = $choices;
+
+    return $form;
+}
+
+//On met un filtre sur le form ID=1 et le field ID=19 (selection des programs) [Comment mieux viser le field sans code en dur son ID??]
+add_filter('gform_after_create_post_1', 'set_event_content', 10, 3);
+
+function set_event_content($post_id, $entry, $form)
+{
+
+  // Checkboxes field id. Change this value to your field id number.
+  $field_id = 19;
+ 
+  // Get field object.
+  $field = GFAPI::get_field( $form, $field_id );
+
+  if ( $field->type == 'checkbox' ) {
+      // Get a comma separated list of checkboxes checked
+      $checked = $field->get_value_export( $entry );
+
+      // Convert to array.
+      $values = explode( ', ', $checked );
+
+    //var_dump($values);
+
+      update_post_meta( $post_id, 'related_programs', $values );
+  }
+}

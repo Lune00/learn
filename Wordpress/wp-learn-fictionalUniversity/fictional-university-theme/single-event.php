@@ -17,6 +17,23 @@
             </span></p>
     </div>
     <div class="generic-content"><?php the_content(); ?></div>
+
+    <?php
+    $relatedPrograms = get_field('related_programs');
+    // print_r($relatedPrograms);
+    ?>
+
+    <!-- Print related programs to the event if they exit -->
+    <?php if ($relatedPrograms) : ?>   
+        <hr class="section-break">
+        <h2 class="headline headline--medium">Related Programs</h2>
+        <ul class="link-list min-list">
+            <?php foreach ($relatedPrograms as $relatedProgram) : ?>
+                <li><a href="<?php echo get_the_permalink($relatedProgram) ?>"><?php echo get_the_title($relatedProgram) ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
 </div>
 
 
