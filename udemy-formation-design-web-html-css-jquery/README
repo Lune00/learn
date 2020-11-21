@@ -44,6 +44,16 @@ Pink : romance, care, peace, affection
 Brown : relaxation, confidence, comfort
 
 
+=> Layout and spacing:
+    use whitespace to breath (between html blocks, elements)
+    whitespace between group of elements, sections but not too much !
+    whitespace defines the visual hierarchy of the web page
+    Hierarchy :
+        Defines where you want your audience to look first
+        Establish a flow that corresponds to your content's message
+        Use whitespace to build that flow
+
+
 => Image :
     Text on images:
         . put text directly on the image (il faut assez de contraste entre l'image et le texte)
@@ -61,6 +71,14 @@ Brown : relaxation, confidence, comfort
     icons imgs (static, aggrandissement perte de définition) or icons font/svg vectorial (a preferer si possible car ca scale pour toute résolution)
 
 
-=> user experience :
+=> User experience :
     user interface (UI) : look and feel of the product (web page)
     user experience : c'est l'experience que l'utilisateur a avec le produit
+    aligner l'objectif de l'utilisateur et celui du système/produit/service 
+
+
+Collect design that you like and analyse them:
+    understand how it's done
+    why do they look good ?
+    what does this sites have in common ?
+    understand html/css/js
