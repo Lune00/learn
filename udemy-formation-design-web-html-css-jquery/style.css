@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* La propriété CSS box-sizing définit la façon dont la hauteur et la largeur totale d'un élément est calculée (par defaut content-box) */
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Merriweather', serif;
+
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 54px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+h1,
+h2 {
+    color: #3498db
+}
+
+p {
+    text-align: justify;
+}
+
+.main-text{
+    margin-bottom: 20px;
+    border: solid black 1px;
+    padding: 20px;
+}
+
+.container{
+    width: 80%;
+    /* margin à 2 valeurs: (haut et bas)(gauche et droite) auto : répartit équitablement la marge restante (espace non contenu et non padding) entre chaque coté */
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.blog-post{
+    width: 78%;
+    float: left;
+    padding-right: 30px;
+    position: relative;
+}
+
+.other-posts{
+    float: left;
+
+}
+.author-box{
+    border-top: solid 1px #3f3f3f
+}
+
+.clear-fix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.other{
+    margin-bottom: 15px;
+}
+
+.author-box img{
+    /* Si on fixe une dimension mettre l'autre a auto permet de conserver l'aspect ratio */
+    width: 100px;
+    height: auto;
+    /* Si c'est un square, border-radius: 50% cree une image ronde */
+    border-radius: 20%; 
+    float: left;
+}
+
+.author-text{
+    float: left;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.date{
+    /* On ne peut mettre un element en position absolue que si son parent est en relatif */
+    position: absolute;
+    /* Distance au top ou right du parent */
+    top: 10px;
+    right: 30px;
+
+}

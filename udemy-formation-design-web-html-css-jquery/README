@@ -1,0 +1,66 @@
+Webdesign guidelines
+
+=> Typographie: 
+
+Utiliser une font-size entre 15 et 25 pixels pour le texte
+
+Font-size 90px à 30 pour les headlines (plus la font-size est grosse plus il faut baisser la font-weight (plus fins) pour ne pas surcharger)
+
+Utiliser un line-spacing (vertical distance between lines) entre 120 et 150% de la font-size
+
+Longueur de ligne : 45 à 90 caractères par ligne
+
+Use good fonts : Sans serif (plus legere, clean, simple) vs serif (long reading, traditional purposes) 
+
+Google fonts:
+Good sans serif fonts : Open Sans, Lato, Raleway, Monsterrat, PT sans
+Good serif fonts : Cardo, Merriweather, PT Serif
+
+How to choose a font ?
+    Reflect the look and feel of the website (intention)
+    Decide serif or sans-serif
+    use a good font
+    Use only one typeface (mais on peut utiliser differentes font)
+
+
+Difference entre font et typeface : Helvetica est un typeface, cad, un ensemble particulier de glyphes (representation d'un caractere (un caractere est abstrait)) qui partagent un design commun. Une font est une un sous ensemble d'une typeface. Par exemple 12pt Helvetica est une font, et 10pt Helvetica est une autre font. 14 pt Helvetica Bold est encore une autre font (ici on a rajouté le poids). Elles sont toutes des fonts differentes, mais du même typeface.
+
+=> Colors :
+
+    Use only one base color for the design
+    Creer une palette a partir de cette couleur de base (des couleurs plus sombres et plus claires)
+    Utiliser une color pour attirer l'attention sur certains éléments (boutons, liens etc..;)
+    Ne jamais utiliser le noir dans le design
+    Choisir les couleurs avec attention (interpretation, culture, psychologie)
+
+Ex: 
+Rouge : power, excitement, passion, strength
+Orange : draw attention without being red, creativity, friendlyness, confidence, courage
+Yellow : energeetic, hapyness, loveliness, curiosity, inteligence
+Green : harmony, nature, life, health, money
+Blue : patience, peace, trust, stability, honor
+Purple : power, wisdom, loyalty, mystery, luxury
+Pink : romance, care, peace, affection
+Brown : relaxation, confidence, comfort
+
+
+=> Image :
+    Text on images:
+        . put text directly on the image (il faut assez de contraste entre l'image et le texte)
+        . si le contraste est pas assez bon, il suffit d'overlay l'image avec une couleur qui recree le contraste (overlay avec du noir ou du blanc, ou avec une couleur mais attention à sa signification)
+        . put the text in a box
+        . blur the image
+        . floor fade (fade vers du noir là où y'a le texte)
+
+
+=> Icons :
+
+    use icons to list features of a product or steps of a procedure to follow
+    use icons for actions and links (l'icone doit etre immédiatement reconnaissable, labelé l'icone)
+    icons should not take a center stage in the design
+    icons imgs (static, aggrandissement perte de définition) or icons font/svg vectorial (a preferer si possible car ca scale pour toute résolution)
+
+
+=> user experience :
+    user interface (UI) : look and feel of the product (web page)
+    user experience : c'est l'experience que l'utilisateur a avec le produit
