@@ -1,0 +1,59 @@
+version: '3.4'
+
+services:
+  www:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - conservatoires-de-france
+      - web
+    volumes:
+      - ./goliath-secure-documents:/var/www/goliath-secure-documents
+      - ./htdocs/:/var/www/html:rw
+    links:
+      - db:mysql
+    environment:
+      WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_TABLE_PREFIX: cdf_
+      XDEBUG_CONFIG: remote_host=172.18.0.1
+    container_name: conservatoires-de-france-www
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:${DOCKER_DOMAIN}"
+      - "traefik.enable=true"
+      - "traefik.entryPoint=http"
+
+  db:
+    image: mysql:5.7 # note 8.0 n'est pas stable https://github.com/laradock/laradock/issues/1392
+    restart: always
+    networks:
+      - conservatoires-de-france
+    volumes:
+      - ./docker/mysql/dump/:/docker-entrypoint-initdb.d/ # Execute les scripts avec l'extension .sql, .sql.gz, .sh présents dans ./mysql/dump/ (! requiert que ./mysql/data/db soit vide)
+      - ./docker/mysql/data/db:/var/lib/mysql
+    container_name: conservatoires-de-france-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  conservatoires-de-france-wpcli:
+    image: wordpress:cli
+    command: "--path=/var/www/html/"
+    networks:
+        - conservatoires-de-france    
+    volumes:
+      - wproot:/var/www/html/
+    links:
+      - db:mysql
+    container_name: conservatoires-de-france-wpcli
+
+volumes:
+  wproot:
+
+networks:
+  conservatoires-de-france:
+  web:
+    external: true
+
