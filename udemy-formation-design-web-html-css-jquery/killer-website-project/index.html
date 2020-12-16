@@ -3,10 +3,14 @@
 <html lang="en">
 
 <head>
+    <!-- For media querries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="vendors/css/grid.css" type="text/css">
     <link rel="stylesheet" href="vendors/css/ionicons.min.css" type="text/css">
     <link rel="stylesheet" href="vendors/css/normalize.css" type="text/css">
     <link rel="stylesheet" href="resources/css/style.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/queries.css" type="text/css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
@@ -16,7 +20,7 @@
 <body>
 
     <header>
-        <nav>
+        <nav class="sticky-nav">
             <div class="row">
                 <img src="resources/img/logo-white.png" alt="Our logo" class="logo">
                 <ul class="main-navigation">
@@ -196,18 +200,19 @@
                 </h3>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-person"></i>
+                    <i class="ion-ios-infinite ion-ios-person icon-small"></i>
                     1600+ happy eaters
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-star"></i>
+                    <i class="ion-ios-infinite ion-ios-star icon-small"></i>
                     60+ top chefs
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-social-twitter"></i>
-                    @omnifood_lx
+                    <i class="ion-ios-infinite ion-social-twitter  icon-small"></i>
+                    <a href="#">@omnifood_lx</a>
+
                 </div>
 
             </div>
@@ -217,18 +222,18 @@
                     San Francisco
                 </h3>
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-person"></i>
+                    <i class="ion-ios-infinite ion-ios-person icon-small"></i>
                     3700+ happy eaters
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-star"></i>
+                    <i class="ion-ios-infinite ion-ios-star icon-small"></i>
                     160+ top chefs
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-social-twitter"></i>
-                    @omnifood_sf
+                    <i class="ion-ios-infinite ion-social-twitter icon-small"></i>
+                    <a href="#">@omnifood_lx</a>
                 </div>
 
             </div>
@@ -238,18 +243,18 @@
                     Berlin
                 </h3>
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-person"></i>
+                    <i class="ion-ios-infinite ion-ios-person icon-small"></i>
                     2300+ happy eaters
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-star"></i>
+                    <i class="ion-ios-infinite ion-ios-star icon-small"></i>
                     110+ top chefs
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-social-twitter"></i>
-                    @omnifood_berlin
+                    <i class="ion-ios-infinite ion-social-twitter icon-small"></i>
+                    <a href="#">@omnifood_lx</a>
 
                 </div>
 
@@ -260,25 +265,170 @@
                     London
                 </h3>
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-person"></i>
+                    <i class="ion-ios-infinite ion-ios-person icon-small"></i>
                     1200+ happy eaters
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-ios-star"></i>
+                    <i class="ion-ios-infinite ion-ios-star icon-small"></i>
                     50+ top chefs
                 </div>
 
                 <div class="city-feature">
-                    <i class="ion-ios-infinite ion-social-twitter"></i>
-                    @omnifood_london
+                    <i class="ion-ios-infinite ion-social-twitter icon-small"></i>
+                    <a href="#">@omnifood_lx</a>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <section class="section-testimonials">
 
+        <div class="row">
+            <h2>Our customers can't live without us</h2>
+        </div>
+        <div class="row">
+            <div class="col span-1-of-3">
+                <blockquote>
+                    Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so
+                    Omnifood is a life-saver. Now that I got used to it, I couldn't live without my daily meals!
+                    <cite> <img src="resources/img/customer-1.jpg" alt="Customer"> Alberto Duncan</cite>
+                </blockquote>
+            </div>
+            <div class="col span-1-of-3">
+                <blockquote>
+                    Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food
+                    delivery here in Lisbon, but no one comes even close to Omifood. Me and my family are so in love!
+                    <cite> <img src="resources/img/customer-2.jpg" alt="Customer"> Joana Silva</cite>
+                </blockquote>
+            </div>
+            <div class="col span-1-of-3">
+                <blockquote>
+                    I was looking for a quick and easy food delivery service in San Franciso. I tried a lot of them and
+                    ended up with Omnifood. Best food delivery service in the Bay Area. Keep up the great work!
+                    <cite> <img src="resources/img/customer-3.jpg" alt="Customer"> Milton Chapman</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-plans">
+
+        <div class="row">
+            <h2>Start eating healthy today</h2>
+        </div>
+        <div class="row">
+
+            <div class="col span-1-of-3">
+                <div class="plan-box">
+                    <div>
+                        <h3>Premium</h3>
+                        <p class="plan-price">
+                            399$ <span>/ month</span>
+                        </p>
+                        <p class="plan-price-meal">
+                            That’s only 13.30$ per meal
+                        </p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> 1 meal every day </li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Order 24/7 </li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Access to newest creations </li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Free delivery </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-full">Sign up now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col span-1-of-3">
+                <div class="plan-box">
+                    <div>
+                        <h3>Pro</h3>
+                        <p class="plan-price">
+                            149$ <span>/ month</span>
+                        </p>
+                        <p class="plan-price-meal">
+                            That’s only 14.90$ per meal
+                        </p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> 1 meal 10 days/month</li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Order 24/7 </li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Access to newest creations </li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Free delivery </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-ghost">Sign up now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col span-1-of-3">
+                <div class="plan-box">
+                    <div>
+                        <h3>Pro</h3>
+                        <p class="plan-price">
+                            19$ <span>/ meal</span>
+                        </p>
+                        <p class="plan-price-meal">&nbsp;</p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> 1 meal</li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Order from 8 am to 12 pm </li>
+                            <li> <i class="ion-ios-close-empty icon-small"></i> </li>
+                            <li> <i class="ion-ios-checkmark-empty icon-small"></i> Free delivery </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-ghost">Sign up now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <div class="row">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">iOS App</a></li>
+                    <li><a href="#">Android App</a></li>
+                </ul>
+            </div>
+            <div class="col span-1-of-2">
+                <ul class="social-links">
+                    <li><a href="#"> <i class="ion-social-twitter"></i> </a></li>
+                    <li><a href="#"> <i class="ion-social-googleplus"></i> </a></li>
+                    <li><a href="#"> <i class="ion-social-facebook"></i> </a></li>
+                    <li><a href="#"> <i class="ion-social-instagram"></i> </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <p>
+                Copyright &copy; 2020 by Omnifood. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="resources/js/scripts.js"></script>
 </body>
+
 
 </html>
