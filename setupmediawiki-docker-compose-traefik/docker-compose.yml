@@ -1,0 +1,62 @@
+# MediaWiki with MariaDB
+#
+# Access via "http://localhost:8080"
+#   (or "http://$(docker-machine ip):8080" if using docker-machine)
+version: '3'
+services:
+  mediawiki:
+    image: mediawiki
+    restart: always
+    networks:
+      - web
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:${DOCKER_DOMAIN}"
+      - "traefik.enable=true"
+    links:
+      - database
+    volumes:
+      - ./images:/var/www/html/images
+      # After initial setup, download LocalSettings.php to the same directory as
+      # this yaml and uncomment the following line and use compose to restart
+      # the mediawiki service
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+  database:
+    image: mariadb
+    restart: always
+    networks:
+      - web
+    container_name: ${COMPOSE_PROJECT_NAME}-mysql
+    volumes:
+      - ./docker/mysql/dump/:/docker-entrypoint-initdb.d/
+      - ./docker/mysql/data/db:/var/lib/mysql
+    
+    environment:
+      # @see https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/DefaultSettings.php
+      MYSQL_DATABASE: dbwiki
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: foo
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.8.3
+    restart: always
+    networks:
+      - web
+    depends_on:
+      - database
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      PMA_HOST: database
+      PMA_ARBITRARY: 0
+    container_name: ${COMPOSE_PROJECT_NAME}-pma
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:pma.${DOCKER_DOMAIN}"
+      - "traefik.enable=true"
+      - "traefik.entryPoint=http"  
+
+
+networks:
+  web:
+    external: true

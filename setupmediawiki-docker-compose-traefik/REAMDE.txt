@@ -1,0 +1,7 @@
+utilisateur wiki :
+paul
+nf;jCx{/y~eg&(4y
+
+L'installation nous fabrique un LocalSettings.php qu'on peut ensuite monter via un volume sur le container
+
+Pour persister la base (apres un compose down)
