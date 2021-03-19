@@ -1,31 +1,3 @@
-# Basics
-
-Clojure is a Lisp dialect.
-
-Java program clojure.jar reads Clojure source code and produces Java ByteCode
-
-Java bytecode is then executed by the same JVM process already running clojure.jar
-
-Clojure source code --- text --- > clojure.jar (compiler/Reader) ---> JVM bytecode -----> JVM (execute)
-
-## Create new Clojure project using leiningen
-
-`lein new app project-name`
-
-## Run
-
-`lein run`
-
-## Building Clojure project
-
-`lein uberjar`
-
-## Running
-
-Just need Java.
-
-`java -jar my-program.jar`
-
 # clojure-noob
 
 FIXME: description
@@ -58,7 +30,7 @@ FIXME: listing of options this app accepts.
 
 ## License
 
-Copyright © 2019 FIXME
+Copyright © 2021 FIXME
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at

@@ -1,0 +1,22 @@
+
+; Syntax error compiling at (core.clj:1:7856).
+; Unable to resolve symbol: left-eye in this context
+clj꞉clojure-noob.core꞉> 
+"head"
+clj꞉clojure-noob.core꞉> 
+; Syntax error compiling at (core.clj:1:7856).
+; Unable to resolve symbol: asym-hobbit-body-parts in this context
+clj꞉clojure-noob.core꞉> 
+#'clojure-noob.core/asym-hobbit-body-parts
+clj꞉clojure-noob.core꞉> 
+[{:name "head", :size 3} {:name "left-eye", :size 1} {:name "left-ear", :size 1} {:name "mouth", :size 1}]
+clj꞉clojure-noob.core꞉> 
+:name
+clj꞉clojure-noob.core꞉> 
+; Syntax error compiling at (core.clj:1:7856).
+; Unable to resolve symbol: head in this context
+clj꞉clojure-noob.core꞉> 
+:size
+clj꞉clojure-noob.core꞉> 
+[{:name "head", :size 3} {:name "left-eye", :size 1} {:name "left-ear", :size 1} {:name "mouth", :size 1}]
+clj꞉clojure-noob.core꞉> 
