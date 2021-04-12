@@ -79,6 +79,10 @@ git branch -d {nom branche}
 # Github : ça fonctionne toujours sur Git mais maintenant on a un dépot sur un serveur et deux environnements : local (sur sa machine, comme avant) et remote (sur le serveur distant 'origin')
 
 
+# Save credentials (avant Oauth, va etre desuet) pour un depot
+git config user.name "your name"
+git configu user.password "your password"
+
 
 # Git LFS (stocker les images dans le worflow de git sur un serveur dedie, automatiquement) avec Git Large File System
 https://www.youtube.com/watch?v=uLR1RNqJ1Mw
