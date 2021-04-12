@@ -1,0 +1,3 @@
+Fetch une remote branch qui n'est pas encore en local et se mettre dessus
+
+git checkout --track origin/{nom remote branch}

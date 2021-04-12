@@ -1,0 +1,89 @@
+Refs : 
+
+Guide officiel (tres bien fait et tres pedago ) : https://git-scm.com/book/en/v2
+Vidéo d'introduction par l'exemple : https://www.youtube.com/watch?v=V6Zo68uQPqE
+
+#Git basics
+
+## Config
+
+
+git config --global user.name {ton nom}
+git config --global user.email {ton email}
+
+## Creer un nouveau repo/projet
+git init {nom dossier qui sera cree par git}
+
+## Stager (indiquer qu'on veut commit les changements ds certains fichiers)
+git add {nom du fichier}
+git add . #tous les fichiers du repertoire courant (recursif)
+
+## Commit : creer un snapshot du projet (point dans le temps, entree dans le journal)
+git commit -m "un message court qui décrit la modif"
+
+
+## Inspecter
+
+
+git status
+### Voir l'histoire des commits
+git log
+### Voir l'histoire des differences (-p ou --patch) des 2 derniers commits seulement
+git log -p -2
+
+
+## Défaire/revenir en arrière
+
+
+
+### Amender le commit précédent
+git commit -m "commit raté"
+git add fichier-oublie
+git commit --amend # creera un seul commit avec les deux
+
+### Unstaging un fichier stage
+git restore --staged {fichier}
+
+### Démodifier un fichié modié (revenir an arriere d'un commit) [pas encore commité !] 
+### Tout changement local fait a ce fichier est perdu. Git remplace ce fichier avec sa derniere version staged ou commited
+git restore {fichier}
+
+###Revenir a un état antérieur
+git checkout {commit hash/id}
+
+
+#Branching
+
+## Lister les branches
+git branch
+## Creer une nouvelle branche
+git branch {nom branche}
+## Changer de branche
+git checkout {nom branche}
+## Créer une branche et y aller (d'un coup)
+git checkout -b {nom branche}
+
+## Comparer 2 branches
+git diff {branche 1}..{branche 2}
+
+# Merger une branche dans une autre (la rapatrier)
+git checkout master
+git merge develop # on fusionne la branche develop sur master
+
+## Supprimer une branche
+git branch -d {nom branche}
+
+
+
+
+# Github : ça fonctionne toujours sur Git mais maintenant on a un dépot sur un serveur et deux environnements : local (sur sa machine, comme avant) et remote (sur le serveur distant 'origin')
+
+
+
+# Git LFS (stocker les images dans le worflow de git sur un serveur dedie, automatiquement) avec Git Large File System
+https://www.youtube.com/watch?v=uLR1RNqJ1Mw
+https://git-lfs.github.com/
+
+
+
+
