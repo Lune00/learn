@@ -57,3 +57,12 @@ $string ='une string';
 
 echo substr('abcdef', 2) . PHP_EOL;
 echo substr('abcdef', -2) . PHP_EOL;
+
+
+
+$arr = array(
+    '1' => 'toto',
+    '3' => null
+);
+var_dump($arr);
+echo true;
