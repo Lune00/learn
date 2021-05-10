@@ -1,6 +1,0 @@
-<script>
-    function playFile() {
-        let val = document.getElementById("select-audio").value;
-        document.getElementById("audio-tag").src = "media/audios/" + val;
-    }
-</script>
