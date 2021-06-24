@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"WhovianTest::testSetsDoctorWithConstructor":0.002}}
+{"version":1,"defects":{"WhovianTest::testSaysDoctorName":3,"WhovianTest::testRespondToInDisagreement":4,"WhovianTest::testException":5},"times":{"WhovianTest::testSetsDoctorWithConstructor":0.001,"WhovianTest::testSaysDoctorName":0,"WhovianTest::testRespondToInAgreement":0,"WhovianTest::testRespondToInDisagreement":0,"WhovianTest::testException":0}}

@@ -55,7 +55,7 @@ Pour chaque *test suite* on indique le suffixe (prendre en compte uniquement les
 L'attribut `<coverage>` permet d'indiquer les paths à inclure dans notre couverture de code.
 
 
-## Lancer les tests
+## Lancer toutes les *test suites*
 
 Fichier de configuration en paramètre
 
@@ -64,6 +64,10 @@ Fichier de configuration en paramètre
 ou implicite
 
 `vendor/bin/phpunit -c tests`
+
+## Lancer une *test suite*
+
+`vendor/bin/phpunit -c phpunit.xml --testsuite {nom test suite}`
 
 ## Générer un rapport de couverture du code
 
