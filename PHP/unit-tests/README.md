@@ -12,7 +12,7 @@ PHPUNIT lance tes *test suites* (des groupes de tests) grâce à son runner ``te
 
 ### Test case
 
-Un *test case* est une classe PHP qui étend la classe ``PHPUnit_Framework_TestCase``. Chaque test case contient des méthodes publiques **dont les noms commencent par ``test``**. Chacune de ces méthodes sont des tests unitaires. Chaque classe *test case* **doit avoir un nom qui finit par ``Test``, et chaque fichier contenant la classe doit avoir un nom qui finit par ``Test.php``**. 
+Un *test case* est une classe PHP qui étend la classe ``TestCase`` de PHPUnit. Chaque test case contient des méthodes publiques **dont les noms commencent par ``test``**. Chacune de ces méthodes sont des tests unitaires. Chaque classe *test case* **doit avoir un nom qui finit par ``Test``, et chaque fichier contenant la classe doit avoir un nom qui finit par ``Test.php``**. 
 
 Par exemple, la classe (*test case*) `FooTest` dans un fichier `FooTest.php` est valide.
 
@@ -32,19 +32,19 @@ Par exemple, la classe (*test case*) `FooTest` dans un fichier `FooTest.php` est
 Le runner PHPUnit ``test`` (dans vendor/bin) 
 
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit boostrap="tests/bootstrap.php">
-
-    <testsuites>
-        <testsuite name="whovian">
-            <directory suffix="Test.php">tests</directory>
-        </testsuite>
-    </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory>src</directory>
-        </whitelist>
-    </filter>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+bootstrap="tests/bootstrap.php" 
+xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <include>
+      <directory>src</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="whovian">
+      <directory suffix="Test.php">tests</directory>
+    </testsuite>
+  </testsuites>
 </phpunit>
 
 
@@ -52,7 +52,7 @@ Le runner PHPUnit ``test`` (dans vendor/bin)
 
 Pour chaque *test suite* on indique le suffixe (prendre en compte uniquement les fichiers qui finissent par ce suffixe), et le répertoire où se trouvent les *test cases* à lancer.
 
-L'attribut `<filter>` permet d'indiquer les chemins à inclure dans notre couverture de code. L'attribut `<whitelist>` permet de couvrir *seulement* pour ce path. 
+L'attribut `<coverage>` permet d'indiquer les paths à inclure dans notre couverture de code.
 
 
 ## Lancer les tests
