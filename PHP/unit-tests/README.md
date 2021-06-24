@@ -57,10 +57,18 @@ L'attribut `<coverage>` permet d'indiquer les paths à inclure dans notre couver
 
 ## Lancer les tests
 
+Fichier de configuration en paramètre
+
 `vendor/bin/phpunit -c phpunit.xml`
+
+ou implicite
+
+`vendor/bin/phpunit -c tests`
 
 ## Générer un rapport de couverture du code
 
 Si on veut savoir quel code est testé et quel code ne l'est pas, PHPUNIT nous permet de générer un rapport sur l'état de la couverture du code
 
 `vendor/bin/phpunit -c phpunit.xml --coverage-html coverage`
+
+Cette fonctionnalité nécessite Xdebug avec `XDEBUG_MODE=coverage`.
