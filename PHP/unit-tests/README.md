@@ -48,5 +48,19 @@ Le runner PHPUnit ``test`` (dans vendor/bin)
 </phpunit>
 
 
-``bootstrap`` est un attribut de l'élément XML ``<phpunit></phpunit>``. Il indique le path (relatif au fichier de configuration ``phpunit.xml``) vers un fichier (``bootstrap.php``) qui sera inclus **avant que le runner de PHPUNIT n'éxecute les tests**. Il nous permet d'autoloader les dépendances installées par Composer pour les rendre disponibles pour nos tests.
+``bootstrap`` est un attribut de l'élément XML ``<phpunit>``. Il indique le path (relatif au fichier de configuration ``phpunit.xml``) vers un fichier (``bootstrap.php``) qui sera inclus **avant que le runner de PHPUNIT n'éxecute les tests**. Il nous permet d'autoloader les dépendances installées par Composer pour les rendre disponibles pour nos tests.
 
+Pour chaque *test suite* on indique le suffixe (prendre en compte uniquement les fichiers qui finissent par ce suffixe), et le répertoire où se trouvent les *test cases* à lancer.
+
+L'attribut `<filter>` permet d'indiquer les chemins à inclure dans notre couverture de code. L'attribut `<whitelist>` permet de couvrir *seulement* pour ce path. 
+
+
+## Lancer les tests
+
+`vendor/bin/phpunit -c phpunit.xml`
+
+## Générer un rapport de couverture du code
+
+Si on veut savoir quel code est testé et quel code ne l'est pas, PHPUNIT nous permet de générer un rapport sur l'état de la couverture du code
+
+`vendor/bin/phpunit -c phpunit.xml --coverage-html coverage`
