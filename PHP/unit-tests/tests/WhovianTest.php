@@ -18,9 +18,6 @@ class WhovianTest extends TestCase
         $this->assertEquals('The best doctor is David Tennant', $whovian->say());
     }
 
-    //Creer une fonction Fournisseur de données (d'opinions)
-    //à passer à testRespondToInAgreement
-
     public function testRespondToInAgreement()
     {
         $whovian = new Whovian('David Tennant');
@@ -28,10 +25,9 @@ class WhovianTest extends TestCase
         $this->assertEquals('I agree !', $whovian->respondTo($opinion));
     }
 
-    /**
-     * @expectedException Exception
-     */
-    public function testRespondToInDisagreement(){
+
+    public function testRespondToInDisagreement()
+    {
 
         $this->expectException(Exception::class);
         $whovian = new Whovian('David Tennant');
@@ -39,4 +35,51 @@ class WhovianTest extends TestCase
         $whovian->respondTo($opinion);
     }
 
+    //Fonction Data Provider
+    //Renvoie un tableau de tableaux. Chaque tableau est un jeu
+    //de données passé en paramètre a la fonction qui s'en servira
+    //de dataProvider. Si la fonction à tester n'a besoin que d'un paramètre
+    //on retourne des tableaux à un élément
+
+    /**
+     * Data provider
+     */
+    public function opinionsDisagreementProvider()
+    {
+        return array(
+            ['No man, David was a great one'],
+            ['A duck !'],
+            ['Tennant, Really ?'],
+            [false]
+        );
+    }
+
+    /**
+     * @dataProvider opinionsDisagreementProvider
+     */
+    public function testRespondToDisagreement($opinion)
+    {
+        $this->expectException(Exception::class);
+        $whovian = new Whovian('David Tennant');
+        $whovian->respondTo($opinion);
+    }
+
+
+
+    public function opinionAgreementProvider()
+    {
+        return array(
+            ['David Tennant is so cool'],
+            ['Have you seen David Tennant ?'],
+        );
+    }
+
+    /**
+     * @dataProvider opinionAgreementProvider
+     */
+    public function testRespondToAgreement($opinion)
+    {
+        $whovian = new Whovian('David Tennant');
+        $this->assertEquals('I agree !', $whovian->respondTo($opinion));
+    }
 }
