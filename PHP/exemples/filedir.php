@@ -16,7 +16,7 @@ echo "dirname(__DIR__ . '/') = " . dirname(__DIR__);
 echo "\n";
 
 //Renvoie le chemin du dossier parent avec un niveau
-echo "dirname(__DIR__ . '/') = " . dirname(__DIR__, 2);
+echo " dirname(__DIR__, 2) = " . dirname(__DIR__, 2);
 
 echo "\n";
 
